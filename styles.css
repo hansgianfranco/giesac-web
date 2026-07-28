@@ -7,13 +7,37 @@
   --bg1: #F5F5F5;
   --bg2: #E9E9EA;
   --ink: #3B3135;
+  --ink-92: rgba(59, 49, 53, 0.92);
   --ink-80: rgba(59, 49, 53, 0.80);
+  --ink-75: rgba(59, 49, 53, 0.75);
   --ink-60: rgba(59, 49, 53, 0.60);
+  --ink-55: rgba(59, 49, 53, 0.55);
   --ink-40: rgba(59, 49, 53, 0.50);
   --ink-20: rgba(59, 49, 53, 0.20);
   --ink-10: rgba(59, 49, 53, 0.10);
   --ink-06: rgba(59, 49, 53, 0.06);
   --accent: #59BABF;
+  --accent-invert: rgba(59, 49, 53, 0.60);
+  --white-90: rgba(245, 245, 245, 0.90);
+  --white-85: rgba(245, 245, 245, 0.85);
+  --white-80: rgba(245, 245, 245, 0.80);
+  --white-75: rgba(245, 245, 245, 0.75);
+  --white-70: rgba(245, 245, 245, 0.70);
+  --white-65: rgba(245, 245, 245, 0.65);
+  --white-60: rgba(245, 245, 245, 0.60);
+  --white-55: rgba(245, 245, 245, 0.55);
+  --white-50: rgba(245, 245, 245, 0.50);
+  --white-45: rgba(245, 245, 245, 0.45);
+  --white-40: rgba(245, 245, 245, 0.40);
+  --white-30: rgba(245, 245, 245, 0.30);
+  --white-20: rgba(245, 245, 245, 0.20);
+  --white-15: rgba(245, 245, 245, 0.15);
+  --white-12: rgba(245, 245, 245, 0.12);
+  --white-10: rgba(245, 245, 245, 0.10);
+  --white-06: rgba(245, 245, 245, 0.06);
+  --whatsapp: #25D366;
+  --whatsapp-glow: rgba(37, 211, 102, 0.30);
+  --whatsapp-glow-hover: rgba(37, 211, 102, 0.40);
   --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
@@ -211,7 +235,7 @@ p.body {
 }
 
 .btn.light {
-  border-color: rgba(245, 245, 245, 0.5);
+  border-color: var(--white-50);
   color: var(--bg1);
 }
 
@@ -230,6 +254,33 @@ p.body {
 
 .btn.ghost:hover {
   border-color: var(--ink);
+}
+
+.nav-cta {
+  padding: 14px 28px;
+  font-size: 11px;
+}
+
+.form-submit-full {
+  width: 100%;
+  justify-content: center;
+}
+
+.btn--submitted {
+  background: var(--ink);
+  color: var(--bg1);
+}
+
+.form-feedback {
+  font-size: 13px;
+  color: var(--accent);
+  margin-top: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.form-feedback.visible {
+  opacity: 1;
 }
 
 /* ---- Links ---- */
@@ -263,7 +314,7 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(245, 245, 245, 0.82);
+  background: rgba(245,245,245,0.82);
   backdrop-filter: blur(20px) saturate(1.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
   border-bottom: 1px solid var(--ink-06);
@@ -271,7 +322,7 @@ header {
 }
 
 header.scrolled {
-  background: rgba(245, 245, 245, 0.95);
+  background: rgba(245,245,245,0.95);
   box-shadow: 0 1px 20px rgba(59, 49, 53, 0.06);
 }
 
@@ -423,19 +474,19 @@ nav {
   z-index: 999;
   width: 56px;
   height: 56px;
-  background: #25D366;
+  background: var(--whatsapp);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 20px var(--whatsapp-glow);
   transition: all 0.4s var(--ease-out);
   cursor: pointer;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 8px 30px var(--whatsapp-glow-hover);
 }
 
 .whatsapp-float svg {
@@ -447,7 +498,7 @@ nav {
 /* ---- Footer ---- */
 footer {
   background: var(--ink);
-  color: rgba(245, 245, 245, 0.45);
+  color: var(--white-45);
   padding: 80px 0 40px;
   font-size: 13px;
   font-weight: 300;
@@ -467,23 +518,32 @@ footer {
 }
 
 .footer-brand p {
-  color: rgba(245, 245, 245, 0.5);
+  color: var(--white-50);
+  font-size: 14px;
   line-height: 1.8;
   max-width: 300px;
+  margin-top: 16px;
+}
+
+.footer-address {
+  display: block;
+  color: var(--white-45);
+  margin-top: 16px;
+  font-size: 12px;
 }
 
 .footer-col h3 {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(245, 245, 245, 0.7);
+  color: var(--white-70);
   margin-bottom: 24px;
   font-weight: 500;
 }
 
 .footer-col a {
   display: block;
-  color: rgba(245, 245, 245, 0.45);
+  color: var(--white-45);
   margin-bottom: 12px;
   transition: color 0.3s ease;
   font-size: 13px;
@@ -494,7 +554,7 @@ footer {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(245, 245, 245, 0.1);
+  border-top: 1px solid var(--white-10);
   padding-top: 32px;
   display: flex;
   justify-content: space-between;
@@ -663,7 +723,7 @@ footer {
 
 .card:hover {
   background: var(--bg1);
-  box-shadow: 0 20px 60px rgba(59, 49, 53, 0.08);
+  box-shadow: 0 20px 60px rgba(59,49,53,0.08);
 }
 
 .card-number {
@@ -780,7 +840,7 @@ footer {
 .project-card .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(59, 49, 53, 0.92) 0%, rgba(59, 49, 53, 0.3) 50%, transparent 100%);
+  background: linear-gradient(to top, var(--ink-92) 0%, rgba(59,49,53,0.30) 50%, transparent 100%);
   opacity: 0;
   transition: opacity 0.6s var(--ease-out);
 }
@@ -824,15 +884,15 @@ footer {
 
 .project-card .project-info .loc {
   font-size: 13px;
-  color: rgba(245, 245, 245, 0.6);
+  color: var(--white-60);
   margin-bottom: 12px;
   font-weight: 300;
 }
 
 .project-card .project-info .ficha {
   font-size: 12px;
-  color: rgba(245, 245, 245, 0.8);
-  border-top: 1px solid rgba(245, 245, 245, 0.2);
+  color: var(--white-80);
+  border-top: 1px solid var(--white-20);
   padding-top: 12px;
   margin-top: 12px;
   line-height: 1.6;
@@ -923,6 +983,26 @@ footer {
   max-width: 520px;
 }
 
+.team-card__links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 12px;
+}
+
+.team-card__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-60);
+  transition: color 0.3s ease;
+}
+
+.team-card__links a:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 768px) {
   .team-card {
     grid-template-columns: 1fr;
@@ -988,14 +1068,15 @@ footer {
 .dark-section {
   background: var(--ink);
   color: var(--bg1);
+  padding: 100px 0;
 }
 
 .dark-section .eyebrow {
-  color: rgba(245, 245, 245, 0.5);
+  color: var(--white-50);
 }
 
 .dark-section p.lead {
-  color: rgba(245, 245, 245, 0.5);
+  color: var(--white-50);
 }
 
 /* ---- Stats ---- */
@@ -1022,7 +1103,7 @@ footer {
 }
 
 .dark-section .stat-row .l {
-  color: rgba(245, 245, 245, 0.4);
+  color: var(--white-40);
 }
 
 /* ---- Legacy / Flagship Projects ---- */
@@ -1030,7 +1111,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(245, 245, 245, 0.12);
+  background: var(--white-12);
 }
 
 .legacy-item {
@@ -1056,7 +1137,7 @@ footer {
 
 .legacy-item p {
   font-size: 13.5px;
-  color: rgba(245, 245, 245, 0.5);
+  color: var(--white-50);
   line-height: 1.7;
   font-weight: 300;
 }
@@ -1066,7 +1147,7 @@ footer {
 }
 
 .legacy-item.highlight .n {
-  color: rgba(59, 49, 53, 0.6);
+  color: var(--accent-invert);
 }
 
 .legacy-item.highlight h4 {
@@ -1074,7 +1155,7 @@ footer {
 }
 
 .legacy-item.highlight p {
-  color: rgba(59, 49, 53, 0.75);
+  color: var(--ink-75);
 }
 
 @media (max-width: 860px) {
@@ -1172,7 +1253,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(59, 49, 53, 0.55) 0%, rgba(59, 49, 53, 0.75) 60%, rgba(59, 49, 53, 0.92) 100%);
+  background: linear-gradient(to bottom, var(--ink-55) 0%, var(--ink-75) 60%, var(--ink-92) 100%);
 }
 
 .hero-content {
@@ -1182,7 +1263,7 @@ section {
 }
 
 .hero .eyebrow {
-  color: rgba(245, 245, 245, 0.6);
+  color: var(--white-60);
   margin-bottom: 28px;
 }
 
@@ -1194,7 +1275,7 @@ section {
 
 .hero-sub {
   font-size: clamp(15px, 1.5vw, 18px);
-  color: rgba(245, 245, 245, 0.7);
+  color: var(--white-70);
   font-weight: 300;
   line-height: 1.7;
   max-width: 620px;
@@ -1229,7 +1310,7 @@ section {
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(245, 245, 245, 0.5);
+  color: var(--white-50);
   margin-top: 8px;
   font-weight: 400;
 }
@@ -1456,7 +1537,7 @@ section {
 }
 
 .contact-preview p {
-  color: rgba(245, 245, 245, 0.55);
+  color: var(--white-55);
   font-size: 15px;
   line-height: 1.8;
   margin-bottom: 40px;
@@ -1468,7 +1549,7 @@ section {
   flex-direction: column;
   gap: 24px;
   margin-top: 40px;
-  border-top: 1px solid rgba(245, 245, 245, 0.15);
+  border-top: 1px solid var(--white-15);
   padding-top: 32px;
 }
 
@@ -1484,7 +1565,7 @@ section {
 
 .contact-preview .datos span {
   font-size: 14px;
-  color: rgba(245, 245, 245, 0.6);
+  color: var(--white-60);
   font-weight: 300;
 }
 
@@ -1745,7 +1826,7 @@ section {
 
 .process-step p {
   font-size: 14px;
-  color: rgba(245, 245, 245, 0.5);
+  color: var(--white-50);
   line-height: 1.7;
   font-weight: 300;
 }
@@ -1797,7 +1878,7 @@ section {
 .proyecto .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(59, 49, 53, 0.92) 0%, rgba(59, 49, 53, 0.2) 50%, transparent 100%);
+  background: linear-gradient(to top, var(--ink-92) 0%, var(--ink-20) 50%, transparent 100%);
   opacity: 0;
   transition: opacity 0.6s var(--ease-out);
 }
@@ -1819,7 +1900,7 @@ section {
 }
 
 .proyecto:hover .num-tag {
-  color: rgba(245, 245, 245, 0.6);
+  color: var(--white-60);
 }
 
 .proyecto .cliente-tag {
@@ -1838,7 +1919,7 @@ section {
 }
 
 .proyecto:hover .cliente-tag {
-  color: rgba(245, 245, 245, 0.5);
+  color: var(--white-50);
 }
 
 .proyecto .proyecto-info {
@@ -1868,15 +1949,15 @@ section {
 
 .proyecto .proyecto-info .loc {
   font-size: 12px;
-  color: rgba(245, 245, 245, 0.6);
+  color: var(--white-60);
   margin-bottom: 10px;
   font-weight: 300;
 }
 
 .proyecto .proyecto-info .ficha {
   font-size: 11px;
-  color: rgba(245, 245, 245, 0.85);
-  border-top: 1px solid rgba(245, 245, 245, 0.2);
+  color: var(--white-85);
+  border-top: 1px solid var(--white-20);
   padding-top: 10px;
   font-weight: 400;
   line-height: 1.5;
@@ -1884,7 +1965,7 @@ section {
 
 .proyecto .proyecto-info .desc {
   font-size: 11.5px;
-  color: rgba(245, 245, 245, 0.65);
+  color: var(--white-65);
   margin-top: 8px;
   font-weight: 300;
   line-height: 1.5;
@@ -2038,7 +2119,7 @@ section {
 .map-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(59, 49, 53, 0.3);
+  background: rgba(59,49,53,0.30);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2058,4 +2139,218 @@ section {
 .map-overlay a:hover {
   background: var(--ink);
   color: var(--bg1);
+}
+
+.map-iframe {
+  border: 0;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+/* ============================================================
+   SECTION MODIFIERS
+   ============================================================ */
+
+.section--bg2 {
+  background: var(--bg2);
+  padding: 100px 0;
+}
+
+.section--nopt {
+  padding-top: 0;
+}
+
+.section--cta {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta__heading {
+  max-width: 600px;
+  margin: 20px auto 30px;
+}
+
+.cta__lead {
+  margin: 0 auto 40px;
+}
+
+/* ============================================================
+   GRIDS — reusable
+   ============================================================ */
+
+.grid--3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ink-10);
+}
+
+.grid--4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--white-10);
+}
+
+@media (max-width: 860px) {
+  .grid--3col {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid--4col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   FEATURE CARDS — used in servicios especialidades & contacto docs
+   ============================================================ */
+
+.feature-card {
+  background: var(--bg1);
+  padding: 40px 32px;
+}
+
+.feature-card--dark {
+  background: var(--ink);
+  padding: 40px 32px;
+}
+
+.feature-card__num {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.feature-card__title {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.feature-card__desc {
+  font-size: 13.5px;
+  color: var(--ink-60);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.feature-card--dark .feature-card__title {
+  color: var(--bg1);
+}
+
+.feature-card--dark .feature-card__desc {
+  color: var(--white-55);
+}
+
+/* ============================================================
+   VALUE CARDS — used in nosotros valores
+   ============================================================ */
+
+.value-card {
+  background: var(--ink);
+  padding: 44px 36px;
+}
+
+.value-card__num {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.value-card__title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.value-card__desc {
+  font-size: 13.5px;
+  color: var(--white-50);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ============================================================
+   DOC CARD — used in contacto documentación
+   ============================================================ */
+
+.doc-card {
+  background: var(--bg1);
+  padding: 40px 32px;
+  transition: background 0.35s ease;
+}
+
+.doc-card:hover {
+  background: var(--bg2);
+}
+
+.doc-card__num {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.doc-link {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* ============================================================
+   CONTACT PREVIEW IMAGE
+   ============================================================ */
+
+.contact-preview__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+/* ============================================================
+   LINKEDIN LINK LIGHT
+   ============================================================ */
+
+.linkedin-link--light {
+  color: var(--white-60);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   MISC UTILITIES
+   ============================================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
+
+.about-intro__heading {
+  margin-top: 16px;
+  max-width: 500px;
 }

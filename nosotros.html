@@ -17,11 +17,15 @@
   <meta property="og:url" content="https://giesac.com.pe/nosotros.html">
   <meta property="og:site_name" content="GIESAC">
   <meta property="og:locale" content="es_PE">
+  <meta property="og:image" content="https://giesac.com.pe/images/logo-negro.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nosotros — GIESAC | Equipo de Ingenieros Especialistas">
-  <meta name="twitter:description"
-    content="Ingenieros especialistas con +13 años de experiencia en proyectos de infraestructura.">
+  <meta name="twitter:description" <meta name="twitter:image" content="https://giesac.com.pe/images/logo-negro.png">
+  content="Ingenieros especialistas con +13 años de experiencia en proyectos de infraestructura.">
   <link rel="icon" type="image/png" href="images/logo-negro.png">
+  <meta name="theme-color" content="#3B3135">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
 {
@@ -57,8 +61,8 @@
         <a href="proyectos.html">Proyectos</a>
         <a href="contacto.html">Contacto</a>
       </div>
-      <a href="contacto.html" class="btn nav-cta" style="padding:14px 28px; font-size:11px;">Contáctanos</a>
-      <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <a href="contacto.html" class="btn nav-cta">Contáctanos</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -66,7 +70,7 @@
 
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true"
     aria-label="Menú de navegación">
-    <button class="close" onclick="toggleMenu()" aria-label="Cerrar menú">&times;</button>
+    <button class="close" aria-label="Cerrar menú">&times;</button>
     <a href="index.html">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="servicios.html">Servicios</a>
@@ -84,7 +88,7 @@
     </section>
 
     <!-- Sectores -->
-    <section style="padding-top:0;">
+    <section class="section">
       <div class="wrap">
         <div class="section-head fade">
           <div>
@@ -145,12 +149,12 @@
     </section>
 
     <!-- Intro -->
-    <section style="background:var(--bg2); padding:100px 0;">
+    <section class="section--bg2">
       <div class="wrap">
         <div class="about-intro">
           <div class="fade">
             <p class="eyebrow">Nuestra filosofía</p>
-            <h2 style="margin-top:16px; max-width:500px;">Profesionales expertos, formando una gran empresa.</h2>
+            <h2 class="about-intro__heading">Profesionales expertos, formando una gran empresa.</h2>
           </div>
           <div class="fade fade-delay-2">
             <p>Empresa peruana dedicada al desarrollo y supervisión de proyectos de ingeniería, con más de 13 años de
@@ -172,14 +176,14 @@
       <div class="wrap">
         <div class="section-head fade">
           <div>
-            <p class="eyebrow" style="color:rgba(245,245,245,0.5)">Trayectoria</p>
+            <p class="eyebrow">Trayectoria</p>
             <h2>Un legado construido en obras de referencia.</h2>
           </div>
           <p class="lead">Más de 13 años participando en proyectos que marcan un estándar técnico para el país,
             además de una fuerte especialización en el sector residencial.</p>
         </div>
 
-        <div class="stat-row" style="margin-bottom:64px;">
+        <div class="stat-row mb-64">
           <div>
             <div class="n">+500</div>
             <div class="l">Proyectos desarrollados exitosamente</div>
@@ -231,6 +235,10 @@
           <div>
             <h3>Ing. Omar Faustor Siancas</h3>
             <span class="rol">Gerente General</span>
+            <div class="team-card__links">
+              <a href="mailto:ofaustor@giesac.com.pe">ofaustor@giesac.com.pe</a>
+              <a href="https://www.linkedin.com/in/omarfaustor/" target="_blank" rel="noopener">LinkedIn →</a>
+            </div>
             <p>Ingeniero electricista con 20 años de experiencia, especialista en el diseño y supervisión de
               instalaciones para proyectos de alta complejidad técnica. Su liderazgo se respalda en una sólida
               trayectoria internacional: se desempeña desde hace más de 5 años como <strong>consultor para la Oficina
@@ -247,13 +255,18 @@
           <div>
             <h3>Ing. Letty Mora Chirito</h3>
             <span class="rol">Jefe de Proyectos</span>
+            <div class="team-card__links">
+              <a href="mailto:lmora@giesac.com.pe">lmora@giesac.com.pe</a>
+              <a href="https://www.linkedin.com/in/letty-mora-chirito/" target="_blank" rel="noopener">LinkedIn →</a>
+            </div>
             <p>Ingeniera sanitaria especialista en sistemas contra incendio, con más de 17 años de experiencia en el
               diseño y supervisión de proyectos de infraestructura de gran escala.</p>
             <p>Su perfil técnico se complementa con una sólida formación académica internacional: es
               <strong>Magíster en Ingeniería Ambiental e Infraestructura Sostenible por el KTH Royal Institute of
                 Technology</strong> y actualmente cursa un <strong>Doctorado en Ingeniería Hidráulica Urbana en la
                 Luleå University of Technology (Suecia)</strong>, consolidando su experiencia a la vanguardia de la
-              innovación y la sostenibilidad.</p>
+              innovación y la sostenibilidad.
+            </p>
           </div>
         </div>
 
@@ -275,41 +288,37 @@
     </section>
 
     <!-- Valores -->
-    <section style="background:var(--ink); color:var(--bg1); padding:100px 0;">
+    <section class="dark-section">
       <div class="wrap">
         <div class="section-head fade">
           <div>
-            <p class="eyebrow" style="color:rgba(245,245,245,0.5)">Principios</p>
+            <p class="eyebrow">Principios</p>
             <h2>Valores que guían nuestro trabajo.</h2>
           </div>
         </div>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(245,245,245,0.1);">
-          <div style="background:var(--ink); padding:44px 36px;">
-            <span
-              style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">01</span>
-            <h4 style="font-size:18px; margin-bottom:10px;">Integridad</h4>
-            <p style="font-size:13.5px; color:rgba(245,245,245,0.5); line-height:1.7; font-weight:300;">En todos los
+        <div class="grid--4col">
+          <div class="value-card">
+            <span class="value-card__num">01</span>
+            <h4 class="value-card__title">Integridad</h4>
+            <p class="value-card__desc">En todos los
               ámbitos de nuestra actuación profesional.</p>
           </div>
-          <div style="background:var(--ink); padding:44px 36px;">
-            <span
-              style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">02</span>
-            <h4 style="font-size:18px; margin-bottom:10px;">Flexibilidad</h4>
-            <p style="font-size:13.5px; color:rgba(245,245,245,0.5); line-height:1.7; font-weight:300;">Nos adecuamos a
+          <div class="value-card">
+            <span class="value-card__num">02</span>
+            <h4 class="value-card__title">Flexibilidad</h4>
+            <p class="value-card__desc">Nos adecuamos a
               las necesidades de cada proyecto.</p>
           </div>
-          <div style="background:var(--ink); padding:44px 36px;">
-            <span
-              style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">03</span>
-            <h4 style="font-size:18px; margin-bottom:10px;">Diversidad</h4>
-            <p style="font-size:13.5px; color:rgba(245,245,245,0.5); line-height:1.7; font-weight:300;">Fomentamos el
+          <div class="value-card">
+            <span class="value-card__num">03</span>
+            <h4 class="value-card__title">Diversidad</h4>
+            <p class="value-card__desc">Fomentamos el
               pensamiento crítico en la comunicación técnica.</p>
           </div>
-          <div style="background:var(--ink); padding:44px 36px;">
-            <span
-              style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">04</span>
-            <h4 style="font-size:18px; margin-bottom:10px;">Proactividad</h4>
-            <p style="font-size:13.5px; color:rgba(245,245,245,0.5); line-height:1.7; font-weight:300;">Buscamos
+          <div class="value-card">
+            <span class="value-card__num">04</span>
+            <h4 class="value-card__title">Proactividad</h4>
+            <p class="value-card__desc">Buscamos
               superarnos para servir mejor a nuestros clientes.</p>
           </div>
         </div>
@@ -323,7 +332,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="images/logo-blanco.png" alt="GIESAC" class="footer-logo" width="192" height="48">
-          <p style="color:rgba(245,245,245,0.5); font-size:14px; line-height:1.8; margin-top:16px;">Grupo Ingenieros
+          <p>Grupo Ingenieros
             Especialistas S.A.C.<br>Diseñamos proyectos que funcionan antes de construirse.</p>
         </div>
         <div class="footer-col">
@@ -345,7 +354,7 @@
           <h3>Contacto</h3>
           <a href="mailto:info@giesac.com.pe">info@giesac.com.pe</a>
           <a href="#">LinkedIn Corporativo</a>
-          <span style="display:block; color:rgba(245,245,245,0.45); margin-top:16px; font-size:12px;">Av. Almirante Grau
+          <span class="footer-address">Av. Almirante Grau
             1380,<br>Of. 217-317, Barranco, Lima</span>
         </div>
       </div>

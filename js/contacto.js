@@ -1,13 +1,22 @@
-document.getElementById('cotForm').addEventListener('submit', (e)=>{
+'use strict';
+
+document.getElementById('cotForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
+  const feedback = document.getElementById('formFeedback');
   btn.textContent = 'Solicitud enviada ✓';
-  btn.style.background = 'var(--ink)';
-  btn.style.color = 'var(--bg1)';
-  setTimeout(()=>{
+  btn.classList.add('btn--submitted');
+  if (feedback) {
+    feedback.textContent = 'Solicitud enviada. Te contactaremos en 48 horas.';
+    feedback.classList.add('visible');
+  }
+  setTimeout(() => {
     btn.textContent = 'Enviar solicitud →';
-    btn.style.background = '';
-    btn.style.color = '';
+    btn.classList.remove('btn--submitted');
+    if (feedback) {
+      feedback.textContent = '';
+      feedback.classList.remove('visible');
+    }
     e.target.reset();
   }, 3000);
 });

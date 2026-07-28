@@ -18,11 +18,16 @@
   <meta property="og:url" content="https://giesac.com.pe/contacto.html">
   <meta property="og:site_name" content="GIESAC">
   <meta property="og:locale" content="es_PE">
+  <meta property="og:image" content="https://giesac.com.pe/images/logo-negro.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contacto — GIESAC | Solicite Cotización de Ingeniería">
   <meta name="twitter:description"
+  <meta name="twitter:image" content="https://giesac.com.pe/images/logo-negro.png">
     content="Solicite cotización de ingeniería. Oficina en Barranco, Lima. Respuesta en 48 horas.">
   <link rel="icon" type="image/png" href="images/logo-negro.png">
+  <meta name="theme-color" content="#3B3135">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
 {
@@ -71,8 +76,8 @@
         <a href="proyectos.html">Proyectos</a>
         <a href="contacto.html" class="active" aria-current="page">Contacto</a>
       </div>
-      <a href="contacto.html" class="btn nav-cta" style="padding:14px 28px; font-size:11px;">Contáctanos</a>
-      <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <a href="contacto.html" class="btn nav-cta">Contáctanos</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -80,7 +85,7 @@
 
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true"
     aria-label="Menú de navegación">
-    <button class="close" onclick="toggleMenu()" aria-label="Cerrar menú">&times;</button>
+    <button class="close" aria-label="Cerrar menú">&times;</button>
     <a href="index.html">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="servicios.html">Servicios</a>
@@ -168,7 +173,8 @@
                 <textarea id="msg" rows="4"
                   placeholder="Ubicación, área aproximada, etapa actual, requerimientos específicos..."></textarea>
               </div>
-              <button type="submit" class="btn" style="width:100%; justify-content:center;">Enviar solicitud →</button>
+              <button type="submit" class="btn form-submit-full">Enviar solicitud →</button>
+              <p id="formFeedback" role="status" aria-live="polite" class="form-feedback"></p>
             </form>
           </div>
         </div>
@@ -177,10 +183,10 @@
 
     <section class="map-section">
       <div class="wrap">
-        <div class="map-container fade" style="position:relative;">
+        <div class="map-container fade">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d500!2d-77.0221954!3d-12.1381475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b729f6a4796d%3A0x4fae52ce0484d5df!2sGIESAC%20-%20Grupo%20de%20Ingenieros%20Especialistas%20S.A.C!5e0!3m2!1ses-419!2spe!4v1785015196721!5m2!1ses-419!2spe"
-            width="100%" height="400" style="border:0; filter:grayscale(1); pointer-events:none;" allowfullscreen=""
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5000!2d-77.0221954!3d-12.1381475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b729f6a4796d%3A0x4fae52ce0484d5df!2sGIESAC%20-%20Grupo%20de%20Ingenieros%20Especialistas%20S.A.C!5e0!3m2!1ses-419!2spe!4v1785015196721!5m2!1ses-419!2spe"
+            width="100%" height="400" class="map-iframe" allowfullscreen=""
             loading="eager">
           </iframe>
           <div class="map-overlay">
@@ -192,7 +198,7 @@
     </section>
 
     <!-- Documentación -->
-    <section style="background:var(--bg2); padding:100px 0;">
+    <section class="section--bg2">
       <div class="wrap">
         <div class="section-head fade">
           <div>
@@ -201,37 +207,28 @@
           </div>
           <p class="lead">Material corporativo para procesos de licitación y evaluación de proveedores.</p>
         </div>
-        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--ink-10);">
-          <div style="background:var(--bg1); padding:40px 32px; transition:background 0.35s ease;"
-            onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background='var(--bg1)'">
-            <span
-              style="font-size:11px; color:var(--accent); font-weight:500; display:block; margin-bottom:16px;">01</span>
+        <div class="grid--3col">
+          <div class="doc-card">
+            <span class="doc-card__num">01</span>
             <h3>Carta de presentación</h3>
-            <a class="link-u"
+            <a class="link-u doc-link"
               href="https://giesac.com.pe/wp-content/uploads/2020/10/Carta-de-presentacion-GIESAC-Rev.-0.pdf"
-              target="_blank" rel="noopener"
-              style="font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; font-weight:500;">Descargar PDF
+              target="_blank" rel="noopener">Descargar PDF
               ↓</a>
           </div>
-          <div style="background:var(--bg1); padding:40px 32px; transition:background 0.35s ease;"
-            onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background='var(--bg1)'">
-            <span
-              style="font-size:11px; color:var(--accent); font-weight:500; display:block; margin-bottom:16px;">02</span>
+          <div class="doc-card">
+            <span class="doc-card__num">02</span>
             <h3>Brochure corporativo</h3>
-            <a class="link-u" href="https://giesac.com.pe/wp-content/uploads/2025/01/GIE-BC-20.25.pdf" target="_blank"
-              rel="noopener"
-              style="font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; font-weight:500;">Descargar PDF
+            <a class="link-u doc-link" href="https://giesac.com.pe/wp-content/uploads/2025/01/GIE-BC-20.25.pdf" target="_blank"
+              rel="noopener">Descargar PDF
               ↓</a>
           </div>
-          <div style="background:var(--bg1); padding:40px 32px; transition:background 0.35s ease;"
-            onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background='var(--bg1)'">
-            <span
-              style="font-size:11px; color:var(--accent); font-weight:500; display:block; margin-bottom:16px;">03</span>
+          <div class="doc-card">
+            <span class="doc-card__num">03</span>
             <h3>Curriculum empresarial</h3>
-            <a class="link-u"
+            <a class="link-u doc-link"
               href="https://giesac.com.pe/wp-content/uploads/2025/03/GIE-CE-01.24-Rev.-A-Curriculum-Empresarial.pdf"
-              target="_blank" rel="noopener"
-              style="font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; font-weight:500;">Descargar PDF
+              target="_blank" rel="noopener">Descargar PDF
               ↓</a>
           </div>
         </div>
@@ -245,7 +242,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="images/logo-blanco.png" alt="GIESAC" class="footer-logo" width="192" height="48">
-          <p style="color:rgba(245,245,245,0.5); font-size:14px; line-height:1.8; margin-top:16px;">Grupo Ingenieros
+          <p>Grupo Ingenieros
             Especialistas S.A.C.<br>Diseñamos proyectos que funcionan antes de construirse.</p>
         </div>
         <div class="footer-col">
@@ -267,7 +264,7 @@
           <h3>Contacto</h3>
           <a href="mailto:info@giesac.com.pe">info@giesac.com.pe</a>
           <a href="#">LinkedIn Corporativo</a>
-          <span style="display:block; color:rgba(245,245,245,0.45); margin-top:16px; font-size:12px;">Av. Almirante Grau
+          <span class="footer-address">Av. Almirante Grau
             1380,<br>Of. 217-317, Barranco, Lima</span>
         </div>
       </div>

@@ -17,11 +17,16 @@
   <meta property="og:url" content="https://giesac.com.pe/servicios.html">
   <meta property="og:site_name" content="GIESAC">
   <meta property="og:locale" content="es_PE">
+  <meta property="og:image" content="https://giesac.com.pe/images/logo-negro.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Servicios — GIESAC | Diseño, BIM, Supervisión y Optimización">
   <meta name="twitter:description"
+  <meta name="twitter:image" content="https://giesac.com.pe/images/logo-negro.png">
     content="Diseño de instalaciones, modelamiento BIM, supervisión y optimización de proyectos.">
   <link rel="icon" type="image/png" href="images/logo-negro.png">
+  <meta name="theme-color" content="#3B3135">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
 {
@@ -67,8 +72,8 @@
         <a href="proyectos.html">Proyectos</a>
         <a href="contacto.html">Contacto</a>
       </div>
-      <a href="contacto.html" class="btn nav-cta" style="padding:14px 28px; font-size:11px;">Contáctanos</a>
-      <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <a href="contacto.html" class="btn nav-cta">Contáctanos</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -76,7 +81,7 @@
 
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true"
     aria-label="Menú de navegación">
-    <button class="close" onclick="toggleMenu()" aria-label="Cerrar menú">&times;</button>
+    <button class="close" aria-label="Cerrar menú">&times;</button>
     <a href="index.html">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="servicios.html">Servicios</a>
@@ -164,7 +169,7 @@
   </section>
 
   <!-- Especialidades -->
-  <section style="background:var(--bg2); padding:100px 0;">
+  <section class="section--bg2">
     <div class="wrap">
       <div class="section-head fade">
         <div>
@@ -172,47 +177,41 @@
           <h2>Capacidades técnicas especializadas.</h2>
         </div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--ink-10);">
-        <div style="background:var(--bg1); padding:40px 32px;">
-          <span
-            style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">01</span>
-          <h4 style="font-size:17px; margin-bottom:10px;">Estructurales</h4>
-          <p style="font-size:13.5px; color:var(--ink-60); line-height:1.7; font-weight:300;">Configuración
+      <div class="grid--3col">
+        <div class="feature-card">
+          <span class="feature-card__num">01</span>
+          <h4 class="feature-card__title">Estructurales</h4>
+          <p class="feature-card__desc">Configuración
             sismorresistente, evaluación de estructuras existentes y estudios de mecánica de suelos.</p>
         </div>
-        <div style="background:var(--bg1); padding:40px 32px;">
-          <span
-            style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">02</span>
-          <h4 style="font-size:17px; margin-bottom:10px;">Eléctricas</h4>
-          <p style="font-size:13.5px; color:var(--ink-60); line-height:1.7; font-weight:300;">Sistemas de fuerza en
+        <div class="feature-card">
+          <span class="feature-card__num">02</span>
+          <h4 class="feature-card__title">Eléctricas</h4>
+          <p class="feature-card__desc">Sistemas de fuerza en
             media y baja tensión, alumbrado, comunicaciones y puesta a tierra.</p>
         </div>
-        <div style="background:var(--bg1); padding:40px 32px;">
-          <span
-            style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">03</span>
-          <h4 style="font-size:17px; margin-bottom:10px;">Mecánicas</h4>
-          <p style="font-size:13.5px; color:var(--ink-60); line-height:1.7; font-weight:300;">HVAC, sistemas de gas,
+        <div class="feature-card">
+          <span class="feature-card__num">03</span>
+          <h4 class="feature-card__title">Mecánicas</h4>
+          <p class="feature-card__desc">HVAC, sistemas de gas,
             extracción de humos y estudios de flujo dinámico computacional (CFD).</p>
         </div>
-        <div style="background:var(--bg1); padding:40px 32px;">
-          <span
-            style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">04</span>
-          <h4 style="font-size:17px; margin-bottom:10px;">Sanitarias</h4>
-          <p style="font-size:13.5px; color:var(--ink-60); line-height:1.7; font-weight:300;">Agua fría y caliente,
+        <div class="feature-card">
+          <span class="feature-card__num">04</span>
+          <h4 class="feature-card__title">Sanitarias</h4>
+          <p class="feature-card__desc">Agua fría y caliente,
             desagüe, drenaje pluvial y redes contra incendio.</p>
         </div>
-        <div style="background:var(--bg1); padding:40px 32px;">
-          <span
-            style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">05</span>
-          <h4 style="font-size:17px; margin-bottom:10px;">Seguridad y Evacuación</h4>
-          <p style="font-size:13.5px; color:var(--ink-60); line-height:1.7; font-weight:300;">Proyectos bajo la norma
+        <div class="feature-card">
+          <span class="feature-card__num">05</span>
+          <h4 class="feature-card__title">Seguridad y Evacuación</h4>
+          <p class="feature-card__desc">Proyectos bajo la norma
             A.130 del RNE y estándares NFPA para licencias de Defensa Civil.</p>
         </div>
-        <div style="background:var(--ink); padding:40px 32px;">
-          <span
-            style="font-size:11px; color:var(--accent); letter-spacing:0.1em; font-weight:500; display:block; margin-bottom:16px;">06</span>
-          <h4 style="font-size:17px; margin-bottom:10px; color:var(--bg1);">Modelamiento BIM</h4>
-          <p style="font-size:13.5px; color:rgba(245,245,245,0.55); line-height:1.7; font-weight:300;">Coordinación de
+        <div class="feature-card--dark">
+          <span class="feature-card__num">06</span>
+          <h4 class="feature-card__title">Modelamiento BIM</h4>
+          <p class="feature-card__desc">Coordinación de
             todas las especialidades bajo metodología BIM colaborativa, en todas las etapas del proyecto.</p>
         </div>
       </div>
@@ -254,12 +253,12 @@
   </section>
 
   <!-- CTA -->
-  <section style="padding:100px 0; text-align:center;">
+  <section class="section--cta">
     <div class="wrap">
       <div class="fade">
         <p class="eyebrow">Próximo paso</p>
-        <h2 style="max-width:600px; margin:20px auto 30px;">¿Listo para optimizar tu proyecto?</h2>
-        <p class="lead" style="margin:0 auto 40px;">Cuéntanos los detalles y te preparamos una propuesta técnica y
+        <h2 class="cta__heading">¿Listo para optimizar tu proyecto?</h2>
+        <p class="lead cta__lead">Cuéntanos los detalles y te preparamos una propuesta técnica y
           económica en 48 horas.</p>
         <a href="contacto.html" class="btn">Solicitar cotización →</a>
       </div>
@@ -273,7 +272,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="images/logo-blanco.png" alt="GIESAC" class="footer-logo" width="192" height="48">
-          <p style="color:rgba(245,245,245,0.5); font-size:14px; line-height:1.8; margin-top:16px;">Grupo Ingenieros
+          <p>Grupo Ingenieros
             Especialistas S.A.C.<br>Diseñamos proyectos que funcionan antes de construirse.</p>
         </div>
         <div class="footer-col">
@@ -295,7 +294,7 @@
           <h3>Contacto</h3>
           <a href="mailto:info@giesac.com.pe">info@giesac.com.pe</a>
           <a href="#">LinkedIn Corporativo</a>
-          <span style="display:block; color:rgba(245,245,245,0.45); margin-top:16px; font-size:12px;">Av. Almirante Grau
+          <span class="footer-address">Av. Almirante Grau
             1380,<br>Of. 217-317, Barranco, Lima</span>
         </div>
       </div>

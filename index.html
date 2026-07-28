@@ -10,6 +10,7 @@
   <meta name="author" content="GIESAC">
   <link rel="canonical" href="https://giesac.com.pe/">
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="images/recurso-1.png" fetchpriority="high">
   <meta property="og:type" content="website">
   <meta property="og:title" content="GIESAC — Ingeniería de Alta Fidelidad">
   <meta property="og:description"
@@ -17,11 +18,16 @@
   <meta property="og:url" content="https://giesac.com.pe/">
   <meta property="og:site_name" content="GIESAC">
   <meta property="og:locale" content="es_PE">
+  <meta property="og:image" content="https://giesac.com.pe/images/logo-negro.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GIESAC — Ingeniería de Alta Fidelidad">
   <meta name="twitter:description"
+  <meta name="twitter:image" content="https://giesac.com.pe/images/logo-negro.png">
     content="Especialistas en diseño de instalaciones, coordinación BIM y optimización de proyectos de ingeniería.">
   <link rel="icon" type="image/png" href="images/logo-negro.png">
+  <meta name="theme-color" content="#3B3135">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
 {
@@ -76,8 +82,8 @@
         <a href="proyectos.html">Proyectos</a>
         <a href="contacto.html">Contacto</a>
       </div>
-      <a href="contacto.html" class="btn nav-cta" style="padding:14px 28px; font-size:11px;">Contáctanos</a>
-      <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <a href="contacto.html" class="btn nav-cta">Contáctanos</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -86,7 +92,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true"
     aria-label="Menú de navegación">
-    <button class="close" onclick="toggleMenu()" aria-label="Cerrar menú">&times;</button>
+    <button class="close" aria-label="Cerrar menú">&times;</button>
     <a href="index.html">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="servicios.html">Servicios</a>
@@ -98,7 +104,7 @@
   <main id="main-content">
     <section class="hero">
       <div class="hero-bg">
-        <img src="images/recurso-1.png" alt="Oficina GIESAC" loading="eager" width="1920" height="1080">
+        <img src="images/recurso-1.png" alt="Oficina GIESAC" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080">
       </div>
       <div class="wrap">
         <div class="hero-content">
@@ -235,7 +241,7 @@
             </div>
           </div>
         </div>
-        <div style="text-align:center; margin-top:60px;" class="fade">
+        <div class="text-center mt-60 fade">
           <a href="proyectos.html" class="btn">Ver todos los proyectos →</a>
         </div>
       </div>
@@ -343,14 +349,14 @@
               </div>
               <div>
                 <b>LinkedIn</b>
-                <span><a href="#" style="color:rgba(245,245,245,0.6); text-decoration:underline;">GIESAC en
+                <span><a href="#" class="linkedin-link--light">GIESAC en
                     LinkedIn</a></span>
               </div>
             </div>
           </div>
           <div class="fade fade-delay-2">
             <img src="images/recurso-5.jpg" alt="Oficina"
-              style="width:100%; aspect-ratio:4/3; object-fit:cover; filter:grayscale(1);">
+              class="contact-preview__img">
           </div>
         </div>
       </div>
@@ -364,7 +370,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="images/logo-blanco.png" alt="GIESAC" class="footer-logo" width="192" height="48">
-          <p style="color:rgba(245,245,245,0.5); font-size:14px; line-height:1.8; margin-top:16px;">Grupo Ingenieros
+          <p>Grupo Ingenieros
             Especialistas S.A.C.<br>Diseñamos proyectos que funcionan antes de construirse.</p>
         </div>
         <div class="footer-col">
@@ -386,7 +392,7 @@
           <h3>Contacto</h3>
           <a href="mailto:info@giesac.com.pe">info@giesac.com.pe</a>
           <a href="#">LinkedIn Corporativo</a>
-          <span style="display:block; color:rgba(245,245,245,0.45); margin-top:16px; font-size:12px;">Av. Almirante Grau
+          <span class="footer-address">Av. Almirante Grau
             1380,<br>Of. 217-317, Barranco, Lima</span>
         </div>
       </div>
