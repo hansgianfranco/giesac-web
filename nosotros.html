@@ -9,7 +9,8 @@
     content="Conozca al equipo de GIESAC. Ingenieros especialistas con +13 años de experiencia en proyectos de infraestructura, comercio e inmobiliaria en el Perú.">
   <meta name="author" content="GIESAC">
   <link rel="canonical" href="https://giesac.com.pe/nosotros.html">
-  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="styles.css">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:type" content="website">
@@ -24,8 +25,9 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nosotros — GIESAC | Equipo de Ingenieros Especialistas">
-  <meta name="twitter:description" <meta name="twitter:image" content="https://giesac.com.pe/images/logo-negro.png">
-  content="Ingenieros especialistas con +13 años de experiencia en proyectos de infraestructura.">
+  <meta name="twitter:description"
+    content="Ingenieros especialistas con +13 años de experiencia en proyectos de infraestructura.">
+  <meta name="twitter:image" content="https://giesac.com.pe/images/logo-negro.png">
   <link rel="icon" type="image/png" href="images/logo-negro.png">
   <meta name="theme-color" content="#3B3135">
   <script type="application/ld+json">
@@ -50,175 +52,86 @@
 <body>
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-  <header id="mainHeader">
-    <nav>
-      <a href="index.html" class="brand">
-        <img src="images/logo-negro.png" alt="GIESAC" class="nav-logo" width="144" height="36">
+  <header id="mainHeader" class="header--dark">
+    <nav class="nav-minimal">
+      <a href="index.html" class="brand" aria-label="GIESAC — Inicio">
+        <img src="images/logo-blanco.png" alt="GIESAC" class="nav-logo nav-logo--light" width="120" height="30"
+          loading="eager" fetchpriority="high" decoding="async">
+        <img src="images/logo-negro.png" alt="GIESAC" class="nav-logo nav-logo--dark" width="120" height="30"
+          loading="eager" decoding="async">
       </a>
-      <div class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html" class="active" aria-current="page">Nosotros</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="contacto.html">Contacto</a>
-      </div>
-      <a href="contacto.html" class="btn nav-cta">Contáctanos</a>
-      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteOverlay">
+        <span class="menu-btn__bar"></span>
+        <span class="menu-btn__bar"></span>
       </button>
     </nav>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true"
+  <!-- Fullscreen overlay menu -->
+  <div class="site-overlay" id="siteOverlay" role="dialog" aria-modal="true" aria-hidden="true"
     aria-label="Menú de navegación">
-    <button class="close" aria-label="Cerrar menú">&times;</button>
-    <a href="index.html">Inicio</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="servicios.html">Servicios</a>
-    <a href="proyectos.html">Proyectos</a>
-    <a href="contacto.html">Contacto</a>
+    <div class="site-overlay__inner">
+      <a href="index.html" class="site-overlay__brand" aria-label="GIESAC — Inicio">
+        <img src="images/logo-blanco.png" alt="GIESAC" width="110" height="28" loading="lazy" decoding="async">
+      </a>
+      <nav class="site-overlay__nav" aria-label="Navegación principal">
+        <a href="index.html" class="site-overlay__link">
+          <span class="site-overlay__num">01</span>
+          <span class="site-overlay__text">Inicio</span>
+        </a>
+        <a href="nosotros.html" class="site-overlay__link active" aria-current="page">
+          <span class="site-overlay__num">02</span>
+          <span class="site-overlay__text">Nosotros</span>
+        </a>
+        <a href="proyectos.html" class="site-overlay__link">
+          <span class="site-overlay__num">03</span>
+          <span class="site-overlay__text">Proyectos</span>
+        </a>
+        <a href="contacto.html" class="site-overlay__link">
+          <span class="site-overlay__num">04</span>
+          <span class="site-overlay__text">Contacto</span>
+        </a>
+      </nav>
+      <div class="site-overlay__footer">
+        <a href="contacto.html" class="site-overlay__cta">Contáctanos</a>
+        <span class="site-overlay__address">Av. Almirante Grau 1350 — Barranco · Of. 217 / 317</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Page Header -->
+  <!-- Page Hero -->
   <main id="main-content">
-    <section class="page-header">
+    <section class="page-hero" aria-label="Nosotros">
+      <div class="page-hero__image" aria-hidden="true">
+        <img src="images/nosotros.png" alt="" width="756" height="1000" loading="eager" fetchpriority="high"
+          decoding="async">
+      </div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
       <div class="wrap">
         <p class="breadcrumb fade"><a href="index.html" class="link-u">Inicio</a> &nbsp;/&nbsp; Nosotros</p>
-        <h1 class="fade fade-delay-1">Desarrollamos soluciones de ingeniería rentables y sostenibles.</h1>
-      </div>
-    </section>
-
-    <!-- Sectores -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head fade">
-          <div>
-            <p class="eyebrow">Sectores</p>
-            <h2>Experiencia transversal en infraestructura.</h2>
-          </div>
-          <p class="lead">Atendemos proyectos en múltiples sectores con el mismo rigor técnico y estándares de calidad.
-          </p>
-        </div>
-        <div class="sectors-grid fade">
-          <div class="sector-item">
-            <span class="n">01</span>
-            <h4>Vivienda Multifamiliar</h4>
-            <p>Grandes conjuntos residenciales, torres de departamentos y complejos habitacionales de alta densidad.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">02</span>
-            <h4>Vivienda Unifamiliar</h4>
-            <p>Casas de playa, quintas y residencias unifamiliares de diseño personalizado.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">03</span>
-            <h4>Comercial</h4>
-            <p>Centros comerciales, retail, galerías y espacios de venta con altos estándares de confort.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">04</span>
-            <h4>Oficinas</h4>
-            <p>Torres corporativas, centros de monitoreo y edificios de oficinas con certificación LEED.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">05</span>
-            <h4>Hoteles</h4>
-            <p>Hoteles urbanos y de playa con ingeniería de instalaciones de alta complejidad.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">06</span>
-            <h4>Educación y Salud</h4>
-            <p>Universidades, colegios, clínicas y centros de salud con normativa especializada.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">07</span>
-            <h4>Industria y Almacenes</h4>
-            <p>Plantas industriales, almacenes logísticos y centros de distribución.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">08</span>
-            <h4>Institucional</h4>
-            <p>Aeropuertos, estadios, teatros, auditorios y edificios de gobierno.</p>
-          </div>
-          <div class="sector-item">
-            <span class="n">09</span>
-            <h4>Clubes y Recreación</h4>
-            <p>Clubes polideportivos, centros recreativos y espacios de esparcimiento.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Intro -->
-    <section class="section--bg2">
-      <div class="wrap">
-        <div class="about-intro">
-          <div class="fade">
-            <p class="eyebrow">Nuestra filosofía</p>
-            <h2 class="about-intro__heading">Profesionales expertos, formando una gran empresa.</h2>
-          </div>
-          <div class="fade fade-delay-2">
-            <p>Empresa peruana dedicada al desarrollo y supervisión de proyectos de ingeniería, con más de 13 años de
-              experiencia en obras como el Estadio Nacional, el Gran Teatro Municipal y la Línea 1 y 2 del Tren
-              Eléctrico.
-            </p>
-            <p>Nuestro objetivo es ofrecer a cada cliente soluciones confiables, económicas y eficientes, equilibrando
-              calidad, alcance, tiempo y costo en cada proyecto que desarrollamos.</p>
-            <p>Buscamos consolidarnos como referentes de calidad y garantía en el sector de ingeniería local, apoyados
-              en
-              nuestro equipo humano, nuestras buenas prácticas y nuestras políticas de seguridad y medio ambiente.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Legado -->
-    <section class="dark-section legacy-section">
-      <div class="wrap">
-        <div class="section-head fade">
-          <div>
-            <p class="eyebrow">Trayectoria</p>
-            <h2>Un legado construido en obras de referencia.</h2>
-          </div>
-          <p class="lead">Más de 13 años participando en proyectos que marcan un estándar técnico para el país,
-            además de una fuerte especialización en el sector residencial.</p>
-        </div>
-
-        <div class="stat-row mb-64">
+        <h1 class="fade fade-delay-1">Desarrollamos <strong>soluciones de ingeniería</strong> rentables y sostenibles.
+        </h1>
+        <p class="sub fade fade-delay-2">Más de 13 años liderando proyectos técnicos en infraestructura, comercio e
+          inmobiliaria, con un equipo multidisciplinario que integra cada especialidad bajo una misma visión.</p>
+        <div class="stat-row fade fade-delay-3">
           <div>
             <div class="n">+500</div>
-            <div class="l">Proyectos desarrollados exitosamente</div>
-          </div>
-          <div>
-            <div class="n">+200</div>
-            <div class="l">Proyectos multifamiliares desarrollados</div>
+            <div class="l">Proyectos desarrollados</div>
           </div>
           <div>
             <div class="n">+4M</div>
             <div class="l">m² desarrollados</div>
           </div>
-        </div>
-
-        <div class="legacy-grid">
-          <div class="legacy-item">
-            <span class="n">01</span>
-            <h4>Remodelación Estadio Nacional</h4>
-            <p>Lima. Proyecto de referencia en la trayectoria de más de 13 años de la empresa.</p>
-          </div>
-          <div class="legacy-item highlight">
-            <span class="n">02</span>
-            <h4>Gran Teatro Municipal</h4>
-            <p>Lima. Participación en la ingeniería de uno de los espacios culturales más emblemáticos del país.</p>
-          </div>
-          <div class="legacy-item">
-            <span class="n">03</span>
-            <h4>Línea 1 y 2 del Tren Eléctrico</h4>
-            <p>Lima. Ingeniería para uno de los proyectos de infraestructura de transporte más importantes del Perú.
-            </p>
+          <div>
+            <div class="n">+13</div>
+            <div class="l">Años de experiencia</div>
           </div>
         </div>
       </div>
     </section>
+
+
+
 
     <!-- Equipo -->
     <section class="team-section">
@@ -231,139 +144,139 @@
         </div>
 
         <div class="team-card fade">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
-            alt="Ing. Omar Faustor Siancas">
+          <img src="images/equipo/omar-fausto.png" alt="Omar Faustor Siancas" width="600" height="800" loading="lazy"
+            decoding="async">
           <div>
-            <h3>Ing. Omar Faustor Siancas</h3>
-            <span class="rol">Gerente General</span>
+            <h3>Omar Faustor Siancas</h3>
+            <span class="rol">Ingeniero Electricista · Gerente General</span>
             <div class="team-card__links">
               <a href="mailto:ofaustor@giesac.com.pe">ofaustor@giesac.com.pe</a>
               <a href="https://www.linkedin.com/in/omarfaustor/" target="_blank" rel="noopener">LinkedIn →</a>
             </div>
-            <p>Ingeniero electricista con 20 años de experiencia, especialista en el diseño y supervisión de
-              instalaciones para proyectos de alta complejidad técnica. Su liderazgo se respalda en una sólida
-              trayectoria internacional: se desempeña desde hace más de 5 años como <strong>consultor para la Oficina
-                de las Naciones Unidas (UNOPS)</strong>.</p>
-            <p>Cuenta además con una destacada participación en el sector público y civil: es Delegado Municipal para
-              la Comisión Técnica de Edificaciones del CIP-Lima desde hace más de 4 años, y suma más de 3 años como
-              Perito Judicial en Ingeniería Eléctrica para el Poder Judicial del Perú.</p>
+            <p>Con 20 años de experiencia, es especialista en el diseño y supervisión de instalaciones para proyectos de
+              alta complejidad técnica.</p>
+            <p>Su liderazgo se respalda en una sólida trayectoria internacional, desempeñándose actualmente como
+              <strong>consultor para la Oficina de las Naciones Unidas (UNOPS)</strong>, rol que ejerce desde hace más de
+              5 años.
+            </p>
+            <p>Asimismo, cuenta con una destacada participación en el sector público y civil: se desempeña actualmente y
+              desde hace más de 4 años como <strong>Delegado Municipal para la Comisión Técnica de Edificaciones del
+                CIP-Lima</strong>, y suma más de 3 años como <strong>Perito Judicial en Ingeniería Eléctrica para el
+                Poder Judicial del Perú</strong>.</p>
           </div>
         </div>
 
         <div class="team-card fade">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
-            alt="Ing. Letty Mora Chirito">
+          <img src="images/equipo/letty-mora.png" alt="Letty Mora Chirito" width="600" height="800" loading="lazy"
+            decoding="async">
           <div>
-            <h3>Ing. Letty Mora Chirito</h3>
-            <span class="rol">Jefe de Proyectos</span>
+            <h3>Letty Mora Chirito</h3>
+            <span class="rol">Ingeniera Sanitaria · Jefe de Proyectos</span>
             <div class="team-card__links">
               <a href="mailto:lmora@giesac.com.pe">lmora@giesac.com.pe</a>
               <a href="https://www.linkedin.com/in/letty-mora-chirito/" target="_blank" rel="noopener">LinkedIn →</a>
             </div>
-            <p>Ingeniera sanitaria especialista en sistemas contra incendio, con más de 17 años de experiencia en el
+            <p>Especialista en ingeniería sanitaria y sistemas contra incendios con más de 17 años de experiencia en el
               diseño y supervisión de proyectos de infraestructura de gran escala.</p>
-            <p>Su perfil técnico se complementa con una sólida formación académica internacional: es
-              <strong>Magíster en Ingeniería Ambiental e Infraestructura Sostenible por el KTH Royal Institute of
-                Technology</strong> y actualmente cursa un <strong>Doctorado en Ingeniería Hidráulica Urbana en la
-                Luleå University of Technology (Suecia)</strong>, consolidando su experiencia a la vanguardia de la
-              innovación y la sostenibilidad.
-            </p>
+            <p>Su perfil técnico se complementa con una sólida formación académica internacional: es <strong>Magíster en
+                Ingeniería Ambiental e Infraestructura Sostenible por el KTH Royal Institute of Technology</strong> y,
+              actualmente, cursa un <strong>Doctorado en Ingeniería Hidráulica Urbana en Luleå University of Technology
+                (Suecia)</strong>, consolidando su experiencia a la vanguardia de la innovación y la sostenibilidad.</p>
           </div>
         </div>
 
         <div class="team-card fade">
-          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80"
-            alt="Ing. Emilio de Rutté">
+          <img src="images/equipo/emilio-rutte.png" alt="Emilio de Rutté Medina" width="600" height="800"
+            loading="lazy" decoding="async">
           <div>
-            <h3>Ing. Emilio de Rutté Medina</h3>
-            <span class="rol">Jefe de Proyectos</span>
-            <p>Ingeniero mecánico con más de 15 años de trayectoria, especializado en el diseño de instalaciones
-              mecánicas y electromecánicas para los sectores comercial, residencial e industrial.</p>
-            <p>Su experiencia incluye un destacado paso de <strong>7 años como ingeniero especialista en CESEL
-                Ingenieros</strong>, una de las firmas de consultoría de ingeniería más importantes del Perú, lo que
-              respalda su capacidad para liderar soluciones técnicas eficientes, rigurosas y alineadas con los más
-              altos estándares del mercado.</p>
+            <h3>Emilio de Rutté Medina</h3>
+            <span class="rol">Ingeniero Mecánico · Jefe de Proyectos</span>
+            <p>Ingeniero especialista en <strong>CESEL Ingenieros</strong>, una de las firmas de consultoría de ingeniería
+              más importantes del Perú, lo que respalda su capacidad para liderar soluciones técnicas eficientes,
+              rigurosas y alineadas con los más altos estándares del mercado.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== DOCUMENTACIÓN ==================== -->
+    <section class="section--bg2">
+      <div class="wrap">
+        <div class="section-head fade">
+          <div>
+            <p class="eyebrow">Documentos</p>
+            <h2>Documentación descargable.</h2>
+          </div>
+          <p class="lead">Material corporativo para procesos de licitación y evaluación de proveedores.</p>
+        </div>
+        <div class="grid--3col">
+          <div class="doc-card">
+            <span class="doc-card__num">01</span>
+            <h3>Brochure corporativo</h3>
+            <a class="link-u doc-link" href="https://giesac.com.pe/wp-content/uploads/2025/01/GIE-BC-20.25.pdf"
+              target="_blank" rel="noopener">Descargar PDF ↓</a>
+          </div>
+          <div class="doc-card">
+            <span class="doc-card__num">02</span>
+            <h3>Curriculum empresarial</h3>
+            <a class="link-u doc-link"
+              href="https://giesac.com.pe/wp-content/uploads/2025/03/GIE-CE-01.24-Rev.-A-Curriculum-Empresarial.pdf"
+              target="_blank" rel="noopener">Descargar PDF ↓</a>
+          </div>
+          <div class="doc-card">
+            <span class="doc-card__num">03</span>
+            <h3>Carta de presentación</h3>
+            <a class="link-u doc-link"
+              href="https://giesac.com.pe/wp-content/uploads/2020/10/Carta-de-presentacion-GIESAC-Rev.-0.pdf"
+              target="_blank" rel="noopener">Descargar PDF ↓</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Valores -->
-    <section class="dark-section">
-      <div class="wrap">
-        <div class="section-head fade">
-          <div>
-            <p class="eyebrow">Principios</p>
-            <h2>Valores que guían nuestro trabajo.</h2>
+
+    <!-- ==================== CTA / CONTACTO ==================== -->
+    <section class="cta-section">
+      <div class="cta-section__grid">
+        <div class="cta-section__left fade">
+          <h2><strong>¿Quieres conocer más<br>sobre nuestro equipo?<br>Hablemos.</strong></h2>
+          <p>Si tienes un proyecto en mente o quieres evaluar una alianza técnica, escríbenos y te contactamos con el
+            especialista adecuado para tu sector.</p>
+          <a href="https://wa.me/51999999999?text=Hola%20GIESAC%2C%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto."
+            class="btn btn--filled" target="_blank" rel="noopener noreferrer">Contáctanos</a>
+          <div class="cta-section__datos">
+            <span class="cta-section__dato-label">OFICINAS</span>
+            <span class="cta-section__dato-val">Av. Almirante Grau 1350 - Barranco<br>Of. 217 / 317</span>
+            <div class="cta-section__social">
+              <a href="#" class="cta-section__social-link" aria-label="LinkedIn GIESAC">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  focusable="false">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a href="https://wa.me/51999999999" class="cta-section__social-link" aria-label="WhatsApp GIESAC"
+                target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                  focusable="false">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="grid--4col">
-          <div class="value-card">
-            <span class="value-card__num">01</span>
-            <h4 class="value-card__title">Integridad</h4>
-            <p class="value-card__desc">En todos los
-              ámbitos de nuestra actuación profesional.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-card__num">02</span>
-            <h4 class="value-card__title">Flexibilidad</h4>
-            <p class="value-card__desc">Nos adecuamos a
-              las necesidades de cada proyecto.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-card__num">03</span>
-            <h4 class="value-card__title">Diversidad</h4>
-            <p class="value-card__desc">Fomentamos el
-              pensamiento crítico en la comunicación técnica.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-card__num">04</span>
-            <h4 class="value-card__title">Proactividad</h4>
-            <p class="value-card__desc">Buscamos
-              superarnos para servir mejor a nuestros clientes.</p>
+        <div class="cta-section__right fade fade-delay-2">
+          <div class="cta-section__frame">
+            <img src="images/recurso-5.jpg" alt="Equipo GIESAC en oficina Barranco" class="cta-section__img" width="700"
+              height="900" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/logo-blanco.png" alt="GIESAC" class="footer-logo" width="192" height="48">
-          <p>Grupo Ingenieros
-            Especialistas S.A.C.<br>Diseñamos proyectos que funcionan antes de construirse.</p>
-        </div>
-        <div class="footer-col">
-          <h3>Navegación</h3>
-          <a href="index.html">Inicio</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="servicios.html">Servicios</a>
-          <a href="proyectos.html">Proyectos</a>
-          <a href="contacto.html">Contacto</a>
-        </div>
-        <div class="footer-col">
-          <h3>Servicios</h3>
-          <a href="servicios.html">Diseño de Instalaciones</a>
-          <a href="servicios.html">Gestión BIM</a>
-          <a href="servicios.html">Optimización</a>
-          <a href="servicios.html">Seguridad y Evacuación</a>
-        </div>
-        <div class="footer-col">
-          <h3>Contacto</h3>
-          <a href="mailto:info@giesac.com.pe">info@giesac.com.pe</a>
-          <a href="#">LinkedIn Corporativo</a>
-          <span class="footer-address">Av. Almirante Grau
-            1380,<br>Of. 217-317, Barranco, Lima</span>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 GIESAC — Grupo Ingenieros Especialistas S.A.C. Todos los derechos reservados.</span>
-      </div>
-    </div>
-  </footer>
 
   <a href="https://wa.me/51999999999?text=Hola%20GIESAC%2C%20deseo%20solicitar%20una%20cotizaci%C3%B3n%2Frevisi%C3%B3n%20para%20un%20proyecto%20de%20ingenier%C3%ADa."
     class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
