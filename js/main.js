@@ -1,18 +1,67 @@
 'use strict';
 
+// Load hero SVG background externally to keep HTML clean
+const heroBgContainer = document.getElementById('hero-bg-container');
+if (heroBgContainer) {
+  fetch('images/hero-blueprint.svg')
+    .then(r => r.text())
+    .then(svg => {
+      heroBgContainer.innerHTML = svg;
+    })
+    .catch(err => console.error('Error loading hero SVG:', err));
+}
+
 /* ============================================================
-   Header scroll
+   Header scroll + dark-section detection
    ============================================================ */
+const mainHeader = document.getElementById('mainHeader');
+const menuBtnEl  = document.getElementById('menuBtn');
+
+function updateHeader() {
+  // 1. Scrolled class (box-shadow / background)
+  mainHeader.classList.toggle('scrolled', window.scrollY > 50);
+
+  // 2. Detect if the fixed menu button sits over a dark section.
+  const btnRect = menuBtnEl.getBoundingClientRect();
+  const cy = btnRect.top + btnRect.height / 2;
+
+  let overDark = false;
+  let hasRenderedSections = false;
+  const darkSections = document.querySelectorAll('[data-theme="dark"]');
+  for (const section of darkSections) {
+    const rect = section.getBoundingClientRect();
+    if (rect.height > 0) hasRenderedSections = true;
+    
+    if (cy >= rect.top && cy <= rect.bottom) {
+      overDark = true;
+      break;
+    }
+  }
+  
+  if (hasRenderedSections) {
+    mainHeader.classList.toggle('header--over-dark', overDark);
+  }
+}
+
 let scrollTicking = false;
 window.addEventListener('scroll', () => {
   if (!scrollTicking) {
     requestAnimationFrame(() => {
-      document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);
+      updateHeader();
       scrollTicking = false;
     });
     scrollTicking = true;
   }
 }, { passive: true });
+
+// Run once on load so initial state is correct, wait for layout/paint
+window.addEventListener('load', () => {
+  requestAnimationFrame(() => updateHeader());
+});
+// Fallback if load already fired or takes too long
+setTimeout(() => {
+  requestAnimationFrame(() => updateHeader());
+}, 100);
 
 /* ============================================================
    Fullscreen overlay menu

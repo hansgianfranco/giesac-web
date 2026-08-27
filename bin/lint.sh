@@ -16,7 +16,10 @@ HTML_FILES=$(git -C "$PROJECT_DIR" ls-files '*.html' 2>/dev/null || find "$PROJE
 for f in $HTML_FILES; do
   abs="$PROJECT_DIR/$f"
   [[ -f "$abs" ]] || abs="$f"
-  matches=$(grep -n 'style="' "$abs" || true)
+  # Excluir style="..." en paths SVG:
+  #   - style="fill:none;stroke:var(...)..." → atributo de presentación SVG (único modo de usar CSS vars en SVG)
+  #   - style="animation:..."               → animation no es atributo SVG nativo
+  matches=$(grep -n 'style="' "$abs" | grep -v 'style="fill:none;stroke:' | grep -v 'style="animation:' || true)
   if [[ -n "$matches" ]]; then
     echo -e "${RED}✗ INLINE STYLE in $f:${NC}"
     echo "$matches" | while read -r line; do

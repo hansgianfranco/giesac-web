@@ -52,7 +52,7 @@
 <body>
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-  <header id="mainHeader" class="header--dark">
+  <header id="mainHeader" class="header--over-dark">
     <nav class="nav-minimal">
       <a href="index.html" class="brand" aria-label="GIESAC — Inicio">
         <img src="images/logo-blanco.png" alt="GIESAC" class="nav-logo nav-logo--light" width="120" height="30"
@@ -101,7 +101,7 @@
 
   <!-- Page Hero -->
   <main id="main-content">
-    <section class="page-hero" aria-label="Nosotros">
+    <section class="page-hero" aria-label="Nosotros" data-theme="dark">
       <div class="page-hero__image" aria-hidden="true">
         <img src="images/nosotros.png" alt="" width="756" height="1000" loading="eager" fetchpriority="high"
           decoding="async">
@@ -113,7 +113,7 @@
         </h1>
         <p class="sub fade fade-delay-2">Más de 13 años liderando proyectos técnicos en infraestructura, comercio e
           inmobiliaria, con un equipo multidisciplinario que integra cada especialidad bajo una misma visión.</p>
-        <div class="stat-row fade fade-delay-3">
+        <!-- <div class="stat-row fade fade-delay-3">
           <div>
             <div class="n">+500</div>
             <div class="l">Proyectos desarrollados</div>
@@ -126,7 +126,7 @@
             <div class="n">+13</div>
             <div class="l">Años de experiencia</div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -143,39 +143,68 @@
             comercio e inmobiliaria en el país.</p>
         </div>
 
-        <div class="team-card fade">
-          <img src="images/equipo/omar-fausto.png" alt="Omar Faustor Siancas" width="600" height="800" loading="lazy"
-            decoding="async">
-          <div>
-            <h3>Omar Faustor Siancas</h3>
-            <span class="rol">Ingeniero Electricista · Gerente General</span>
-            <div class="team-card__links">
-              <a href="mailto:ofaustor@giesac.com.pe">ofaustor@giesac.com.pe</a>
-              <a href="https://www.linkedin.com/in/omarfaustor/" target="_blank" rel="noopener">LinkedIn →</a>
+        <div class="team-card-v2 fade">
+          <!-- Columna 1: Identidad -->
+          <div class="team-card-v2__identity">
+            <h3><span class="prefix">Ing.</span>Omar Faustor Siancas</h3>
+            <span class="rol">Gerente General</span>
+            <div class="team-card-v2__links">
+              <a href="mailto:ofaustor@giesac.com.pe" aria-label="Email">Email</a>
+              <a href="https://www.linkedin.com/in/omarfaustor/" target="_blank" rel="noopener"
+                aria-label="LinkedIn">LinkedIn</a>
             </div>
+            <div class="team-card-v2__spec">
+              <span class="spec-title">(Especialización)</span>
+              <p>Diseño Eléctrico &nbsp;&nbsp; Supervisión &nbsp;&nbsp; BIM</p>
+            </div>
+          </div>
+
+          <!-- Columna 2: Imagen -->
+          <div class="team-card-v2__image">
+            <img src="images/equipo/omar-fausto.png" alt="Omar Faustor Siancas" width="600" height="800" loading="lazy"
+              decoding="async">
+          </div>
+
+          <!-- Columna 3: Biografía -->
+          <div class="team-card-v2__bio">
             <p>Con 20 años de experiencia, es especialista en el diseño y supervisión de instalaciones para proyectos de
               alta complejidad técnica.</p>
             <p>Su liderazgo se respalda en una sólida trayectoria internacional, desempeñándose actualmente como
-              <strong>consultor para la Oficina de las Naciones Unidas (UNOPS)</strong>, rol que ejerce desde hace más de
-              5 años.
+              <strong>consultor para la Oficina de las Naciones Unidas (UNOPS)</strong>, rol que ejerce desde hace más
+              de 5 años.
             </p>
-            <p>Asimismo, cuenta con una destacada participación en el sector público y civil: se desempeña actualmente y
-              desde hace más de 4 años como <strong>Delegado Municipal para la Comisión Técnica de Edificaciones del
-                CIP-Lima</strong>, y suma más de 3 años como <strong>Perito Judicial en Ingeniería Eléctrica para el
-                Poder Judicial del Perú</strong>.</p>
+            <p>Cuenta con una destacada participación en el sector público y civil: se desempeña como <strong>Delegado
+                Municipal para la Comisión Técnica de Edificaciones del CIP-Lima</strong>, y suma más de 3 años como
+              <strong>Perito Judicial en Ingeniería Eléctrica para el Poder Judicial del Perú</strong>.
+            </p>
+
           </div>
         </div>
 
-        <div class="team-card fade">
-          <img src="images/equipo/letty-mora.png" alt="Letty Mora Chirito" width="600" height="800" loading="lazy"
-            decoding="async">
-          <div>
-            <h3>Letty Mora Chirito</h3>
-            <span class="rol">Ingeniera Sanitaria · Jefe de Proyectos</span>
-            <div class="team-card__links">
-              <a href="mailto:lmora@giesac.com.pe">lmora@giesac.com.pe</a>
-              <a href="https://www.linkedin.com/in/letty-mora-chirito/" target="_blank" rel="noopener">LinkedIn →</a>
+        <div class="team-card-v2 fade">
+          <!-- Columna 1: Identidad -->
+          <div class="team-card-v2__identity">
+            <h3><span class="prefix">Ing.</span>Letty Mora Chirito</h3>
+            <span class="rol">Jefe de Proyectos</span>
+            <div class="team-card-v2__links">
+              <a href="mailto:lmora@giesac.com.pe" aria-label="Email">Email</a>
+              <a href="https://www.linkedin.com/in/letty-mora-chirito/" target="_blank" rel="noopener"
+                aria-label="LinkedIn">LinkedIn</a>
             </div>
+            <div class="team-card-v2__spec">
+              <span class="spec-title">(Especialización)</span>
+              <p>Ingeniería Sanitaria &nbsp;&nbsp; Sistemas Contra Incendios</p>
+            </div>
+          </div>
+
+          <!-- Columna 2: Imagen -->
+          <div class="team-card-v2__image">
+            <img src="images/equipo/letty-mora.png" alt="Letty Mora Chirito" width="600" height="800" loading="lazy"
+              decoding="async">
+          </div>
+
+          <!-- Columna 3: Biografía -->
+          <div class="team-card-v2__bio">
             <p>Especialista en ingeniería sanitaria y sistemas contra incendios con más de 17 años de experiencia en el
               diseño y supervisión de proyectos de infraestructura de gran escala.</p>
             <p>Su perfil técnico se complementa con una sólida formación académica internacional: es <strong>Magíster en
@@ -185,15 +214,31 @@
           </div>
         </div>
 
-        <div class="team-card fade">
-          <img src="images/equipo/emilio-rutte.png" alt="Emilio de Rutté Medina" width="600" height="800"
-            loading="lazy" decoding="async">
-          <div>
-            <h3>Emilio de Rutté Medina</h3>
-            <span class="rol">Ingeniero Mecánico · Jefe de Proyectos</span>
-            <p>Ingeniero especialista en <strong>CESEL Ingenieros</strong>, una de las firmas de consultoría de ingeniería
-              más importantes del Perú, lo que respalda su capacidad para liderar soluciones técnicas eficientes,
-              rigurosas y alineadas con los más altos estándares del mercado.</p>
+        <div class="team-card-v2 fade">
+          <!-- Columna 1: Identidad -->
+          <div class="team-card-v2__identity">
+            <h3><span class="prefix">Ing.</span>Emilio de Rutté Medina</h3>
+            <span class="rol">Jefe de Proyectos</span>
+            <div class="team-card-v2__links">
+              <!-- Sin redes sociales por ahora -->
+            </div>
+            <div class="team-card-v2__spec">
+              <span class="spec-title">(Especialización)</span>
+              <p>Ingeniería Mecánica &nbsp;&nbsp; Consultoría &nbsp;&nbsp; Liderazgo Técnico</p>
+            </div>
+          </div>
+
+          <!-- Columna 2: Imagen -->
+          <div class="team-card-v2__image">
+            <img src="images/equipo/emilio-rutte.png" alt="Emilio de Rutté Medina" width="600" height="800"
+              loading="lazy" decoding="async">
+          </div>
+
+          <!-- Columna 3: Biografía -->
+          <div class="team-card-v2__bio">
+            <p>Ingeniero especialista en <strong>CESEL Ingenieros</strong>, una de las firmas de consultoría de
+              ingeniería más importantes del Perú, lo que respalda su capacidad para liderar soluciones técnicas
+              eficientes, rigurosas y alineadas con los más altos estándares del mercado.</p>
           </div>
         </div>
 

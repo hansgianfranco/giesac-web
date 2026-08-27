@@ -11,7 +11,6 @@
   <link rel="canonical" href="https://giesac.com.pe/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="images/recurso-hero-blueprint.png" fetchpriority="high">
   <link rel="preload" as="style" href="styles.css">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:type" content="website">
@@ -66,7 +65,7 @@
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
   <!-- Header minimalista: solo logo + botón circular de menú -->
-  <header id="mainHeader" class="header--dark">
+  <header id="mainHeader" class="header--over-dark">
     <nav class="nav-minimal">
       <a href="index.html" class="brand" aria-label="GIESAC — Inicio">
         <img src="images/logo-blanco.png" alt="GIESAC" class="nav-logo nav-logo--light" width="120" height="30"
@@ -118,18 +117,14 @@
   <main id="main-content">
 
     <!-- ==================== HERO ==================== -->
-    <section class="hero-v2" aria-label="Portada GIESAC">
-      <!-- Fondo foto (provisional) / video (cuando esté disponible) -->
-      <div class="hero-v2__image" aria-hidden="true">
-        <img src="images/recurso-hero-blueprint.png" alt="" width="1305" height="855" loading="eager"
-          fetchpriority="high" decoding="async">
-        <!-- Cuando esté el video final, descomentar y quitar el <img> de arriba:
-        <video class="hero-v2__video" autoplay muted loop playsinline
-          poster="images/recurso-hero-blueprint.png">
-          <source src="videos/hero.mp4" type="video/mp4">
-        </video>
-        -->
+    <section class="hero-v2" aria-label="Portada GIESAC" data-theme="dark">
+      <!-- Fondo SVG animado blueprint (hero-alumbrado) -->
+      <div class="hero-v2__bg" id="hero-bg-container" aria-hidden="true">
       </div>
+      <!-- Overlay de legibilidad — gradiente diagonal (blueprint) -->
+      <div class="hero-v2__scrim" aria-hidden="true"></div>
+      <!-- Grid técnico sutil -->
+      <div class="hero-v2__grid" aria-hidden="true"></div>
       <!-- Overlay gradiente oscuro izquierda -->
       <div class="hero-v2__overlay" aria-hidden="true"></div>
       <!-- Contenido anclado abajo-izquierda -->
@@ -195,9 +190,53 @@
         </div>
       </div>
     </section>
+    <!-- ==================== STATS STRIP ==================== -->
+    <section class="home-stats-strip">
+      <div class="wrap">
+        <div class="home-stats-strip__grid fade">
+          
+          <!-- Stat 1: m2 -->
+          <div class="home-stat home-stat--area">
+            <div class="home-stat__number">+ 4</div>
+            <div class="home-stat__content">
+              <div class="home-stat__top">
+                <div class="home-stat__m2-wrap">
+                  <svg class="home-stat__axis-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5">
+                    <!-- Eje Y con flecha -->
+                    <path d="M4 22V4" />
+                    <path d="M1 7l3-3 3 3" />
+                    <!-- Eje X con flecha -->
+                    <path d="M4 22h16" />
+                    <path d="M17 19l3 3-3 3" />
+                  </svg>
+                  m&sup2;
+                </div>
+              </div>
+              <div class="home-stat__text">
+                millones de<br>desarrollados
+              </div>
+            </div>
+          </div>
 
+          <!-- Stat 2: Proyectos -->
+          <div class="home-stat home-stat--projects">
+            <div class="home-stat__number">+ 500</div>
+            <div class="home-stat__text">proyectos</div>
+          </div>
+
+          <!-- Stat 3: Años -->
+          <div class="home-stat home-stat--years">
+            <div class="home-stat__number">+ 13</div>
+            <div class="home-stat__content">
+              <div class="home-stat__text">años<br>impulsando<br>la ingeniería</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
     <!-- ==================== SERVICIOS STRIP (DARK) ==================== -->
-    <section class="services-strip" aria-label="Nuestros servicios">
+    <section class="services-strip" aria-label="Nuestros servicios" data-theme="dark">
       <div class="services-strip__inner fade">
         <details class="services-strip__item">
           <summary class="services-strip__content">
@@ -313,7 +352,7 @@
     </section>
 
     <!-- ==================== PROYECTOS OTROS SECTORES (DARK) ==================== -->
-    <section class="projects-carousel projects-carousel--dark" aria-label="Proyectos en otros sectores">
+    <section class="projects-carousel projects-carousel--dark" aria-label="Proyectos en otros sectores" data-theme="dark">
       <div class="wrap">
         <div class="projects-carousel__head fade">
           <div class="projects-carousel__title">
@@ -398,20 +437,20 @@
         <h2 class="clients-new__title fade"><strong>Clientes</strong> que nos respaldan</h2>
         <div class="clients-new__grid fade fade-delay-1">
           <div class="clients-new__logo">
-            <img src="images/clientes/madrid-nuevo.png" alt="Madrid Inmobiliaria" width="160" height="56" loading="lazy"
+            <img src="images/clientes/madrid.svg" alt="Madrid Inmobiliaria" width="160" height="56" loading="lazy"
               decoding="async">
           </div>
           <div class="clients-new__logo">
-            <img src="images/clientes/tale-nuevo.png" alt="Tale Inmobiliaria" width="160" height="56" loading="lazy"
+            <img src="images/clientes/tale.svg" alt="Tale Inmobiliaria" width="160" height="56" loading="lazy"
               decoding="async">
           </div>
           <div class="clients-new__logo">
-            <img src="images/clientes/andiamo-nuevo.png" alt="Andiamo" width="160" height="56" loading="lazy"
+            <img src="images/clientes/andiamo.svg" alt="Andiamo" width="160" height="56" loading="lazy"
               decoding="async">
           </div>
           <div class="clients-new__logo">
-            <img src="images/clientes/cantabria-inmobiliaria.png" alt="Cantabria Inmobiliaria" width="160" height="56"
-              loading="lazy" decoding="async">
+            <img src="images/clientes/cantabria.svg" alt="Cantabria Inmobiliaria" width="160" height="56" loading="lazy"
+              decoding="async">
           </div>
         </div>
       </div>
@@ -472,6 +511,16 @@
   <script src="js/proyectos-data.js"></script>
   <script src="js/proyecto-modal.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Activa animaciones del hero-blueprint después de que la página pinte -->
+  <script>
+    'use strict';
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        document.body.classList.add('play');
+      });
+    });
+  </script>
 </body>
 
 </html>

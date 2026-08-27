@@ -14,6 +14,7 @@ Static website (HTML/CSS/JS) hosted on Vercel. No build step, no framework, no n
 
 ### Variables
 All colors MUST use CSS custom properties defined in `:root`:
+- `var(--bg1)` through `var(--bg5)` for section/card backgrounds (`--bg1` #F7F6F4, `--bg2` #EDECEA, `--bg3` #E4E4E4, `--bg4` #CACACA, `--bg5` #3A3238)
 - `var(--ink)` with opacity variants: `--ink-92`, `--ink-80`, `--ink-60`, `--ink-40`, `--ink-20`, `--ink-10`, `--ink-06`
 - `var(--white-*)` for light-on-dark text: `--white-90` through `--white-06`
 - `var(--accent)`, `var(--whatsapp)`, `var(--whatsapp-glow)`
@@ -32,13 +33,12 @@ All colors MUST use CSS custom properties defined in `:root`:
 ## HTML
 
 ### Structure
-- Semantic HTML5: `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`
-- Each page includes header, main content, footer, and WhatsApp float
+- Semantic HTML5: `<header>`, `<nav>`, `<main>`, `<section>`
+- Each page includes header, main content, and WhatsApp float (footer removed for now)
 - The nav's `active` and `aria-current="page"` must reflect the current page
 
-### Forms
-- All form feedback goes through `<p role="status" aria-live="polite">` elements
-- Form submission uses `classList` for visual state changes
+### Cotización / Contacto
+- No form: la solicitud de cotización redirige al chat de WhatsApp (`https://wa.me/...`)
 
 ### Meta & SEO
 Every page MUST include:
@@ -77,9 +77,10 @@ ALL `.js` files MUST start with `'use strict';`
 - Dynamic HTML content: use `textContent` for text, or sanitize with `escapeHtml()` before `innerHTML`
 
 ### File Organization
-- `js/main.js` — shared (header scroll, mobile menu, fade-in observer)
-- `js/contacto.js` — contact form
-- `js/proyectos.js` — project filters and grid
+- `js/main.js` — shared (header scroll, mobile menu, fade-in, carousels, intro slider, modal trigger)
+- `js/proyectos-data.js` — data de los 20 proyectos
+- `js/proyecto-modal.js` — modal de detalle de proyecto (carrusel de fotos)
+- `js/proyectos.js` — página de proyectos (buscador, filtros, orden, grilla/listado)
 - All files loaded at end of `<body>`
 
 ## Tooling
@@ -103,7 +104,6 @@ ALL `.js` files MUST start with `'use strict';`
 giesac-website/
 ├── index.html
 ├── nosotros.html
-├── servicios.html
 ├── proyectos.html
 ├── contacto.html
 ├── styles.css
@@ -114,11 +114,13 @@ giesac-website/
 │   └── lint.sh
 ├── js/
 │   ├── main.js
-│   ├── contacto.js
+│   ├── proyectos-data.js
+│   ├── proyecto-modal.js
 │   └── proyectos.js
 ├── images/
 │   ├── logo-negro.png
 │   ├── logo-blanco.png
+│   ├── equipo/
 │   └── clientes/
 └── robots.txt / sitemap.xml
 ```

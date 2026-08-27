@@ -1,2 +1,4 @@
 .vercel
 .env*
+graphify-out/
+.DS_Store

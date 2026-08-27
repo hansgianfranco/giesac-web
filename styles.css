@@ -325,7 +325,7 @@ p.body {
 
 /* ---- Header: minimalista logo + botón circular ---- */
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -343,13 +343,13 @@ header {
   margin: 0 auto;
 }
 
-/* Scrolled: fondo claro */
+/* Scrolled: sin fondo, solo logo y botón */
 header.scrolled {
-  background: rgba(245, 245, 245, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(59, 49, 53, 0.06);
-  box-shadow: 0 1px 20px rgba(59, 49, 53, 0.06);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
 }
 
 /* Brand / logo */
@@ -358,8 +358,16 @@ header.scrolled {
   align-items: center;
 }
 
-/* Botón circular de menú */
+/* Utility: JS usa esta clase para hacer elementFromPoint() a través del botón */
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+/* Botón circular de menú — fijo, sigue la pantalla */
 .menu-btn {
+  position: fixed;
+  top: 24px;
+  right: 48px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -400,6 +408,7 @@ header.scrolled {
   transform: translateY(-3.75px) rotate(-45deg);
 }
 
+
 /* Scrolled: botón oscuro */
 header.scrolled .menu-btn {
   border-color: var(--ink-20);
@@ -412,6 +421,20 @@ header.scrolled .menu-btn:hover {
 
 header.scrolled .menu-btn__bar {
   background: var(--ink);
+}
+
+/* Override: scrolled pero sobre sección oscura → mantener blanco */
+header.scrolled.header--over-dark .menu-btn {
+  border-color: var(--white-35);
+}
+
+header.scrolled.header--over-dark .menu-btn:hover {
+  border-color: var(--white-70);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+header.scrolled.header--over-dark .menu-btn__bar {
+  background: var(--bg1);
 }
 
 
@@ -569,10 +592,10 @@ footer {
 }
 
 /* ============================================================
-   HOME V2 — Header Dark Mode (sobre hero oscuro)
+   Header — Logo base styles
    ============================================================ */
 
-/* Logo swap: blanco en hero oscuro, negro al hacer scroll */
+/* Por defecto: logo negro, barras tinta */
 .nav-logo--light {
   display: none;
 }
@@ -581,83 +604,157 @@ footer {
   display: block;
 }
 
-.header--dark .nav-logo--light {
+/* ============================================================
+   Dynamic dark-section detection — applied by JS via scroll
+   ============================================================ */
+
+/* Smooth crossfade on all header interactive elements */
+.menu-btn__bar {
+  transition: background 0.3s ease;
+}
+
+.menu-btn {
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+/* === Over a dark section: logo blanco + barras blancas === */
+.header--over-dark .nav-logo--light {
   display: block;
 }
 
-.header--dark .nav-logo--dark {
+.header--over-dark .nav-logo--dark {
   display: none;
 }
 
-.header--dark .menu-btn {
+.header--over-dark .menu-btn {
   border-color: var(--white-35);
 }
 
-.header--dark .menu-btn:hover {
+.header--over-dark .menu-btn:hover {
   border-color: var(--white-70);
   background: rgba(255, 255, 255, 0.08);
 }
 
-.header--dark .menu-btn__bar {
+.header--over-dark .menu-btn__bar {
   background: var(--bg1);
 }
 
-/* Scrolled: fondo translúcido, logo y botón negros */
-.header--dark.scrolled {
-  background: var(--white-50);
-  box-shadow: none;
-}
-
-.header--dark.scrolled .nav-logo--light {
-  display: none;
-}
-
-.header--dark.scrolled .nav-logo--dark {
-  display: block;
-}
-
-.header--dark.scrolled .menu-btn {
-  border-color: var(--ink-20);
-}
-
-.header--dark.scrolled .menu-btn__bar {
-  background: var(--ink);
-}
-
 /* ============================================================
-   HOME V2 — Hero (full-bleed blueprint)
+   HOME V2 — Hero (full-bleed blueprint animado)
    ============================================================ */
 
+/* Variables de color del SVG — valores exactos de hero-alumbrado.html */
 .hero-v2 {
+  --wall-lite:  rgba(143, 227, 255, 0.34);  /* cyan tenue original  */
+  --wall-dark:  rgba(191, 231, 255, 0.62);  /* cyan brillante orig. */
+  --draw-lite:  #9fe8ff;                    /* draw layer lite orig. */
+  --draw-dark:  #e7fbff;                    /* draw layer dark orig. */
+  --hero-grid-line: rgba(143, 227, 255, 0.14); /* navy-line original */
+
   position: relative;
   min-height: 100vh;
   background: var(--ink);
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  isolation: isolate;
 }
 
-/* Blueprint image covers entire section */
-.hero-v2__image {
+@media (min-width: 1024px) {
+  .hero-v2 {
+    height: 100vh;
+    min-height: 0;
+  }
+}
+
+/* ---- Fondo SVG animado (blueprint eléctrico) ---- */
+.hero-v2__bg {
+  position: absolute;
+  inset: -6% -6%;
+  z-index: 0;
+  animation: hero-drift 46s ease-in-out 7.5s infinite alternate;
+}
+
+.hero-v2__bg .blueprint-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Drift suave del plano de fondo */
+@keyframes hero-drift {
+  0%   { transform: scale(1)    translate(0, 0); }
+  100% { transform: scale(1.07) translate(-1.2%, -1.4%); }
+}
+
+/* Animación de reveal diagonal (wipe) */
+.hero-v2__bg .wipe-rect {
+  animation: wipeGrow 5.3s cubic-bezier(.32, .72, .28, 1) 0.23s both;
+}
+
+@keyframes wipeGrow {
+  from { width: 0px; }
+  to   { width: 1800px; }
+}
+
+/* Línea de barrido que sigue el borde del reveal */
+.hero-v2__bg .wipe-line {
+  opacity: 0.95;
+  animation:
+    lineMove 5.3s cubic-bezier(.32, .72, .28, 1) 0.23s both,
+    lineFade 1.2s ease-in 4.8s forwards;
+}
+
+@keyframes lineMove {
+  from { x: -900px; }
+  to   { x:  900px; }
+}
+
+@keyframes lineFade {
+  to { opacity: 0; }
+}
+
+/* Líneas del draw-layer que se dibujan con stroke-dashoffset */
+@keyframes drawline {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeinshape {
+  to { opacity: 1; }
+}
+
+/* Overlay de legibilidad — gradiente de lectura sobre el plano */
+.hero-v2__scrim {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
+  background:
+    linear-gradient(100deg,
+      rgba(42, 33, 39, 0.95) 0%,
+      rgba(42, 33, 39, 0.82) 28%,
+      rgba(42, 33, 39, 0.32) 54%,
+      rgba(42, 33, 39, 0.52) 100%),
+    linear-gradient(180deg,
+      rgba(42, 33, 39, 0.32) 0%,
+      rgba(42, 33, 39, 0.05) 30%,
+      rgba(42, 33, 39, 0.12) 70%,
+      rgba(42, 33, 39, 0.78) 100%);
+  pointer-events: none;
 }
 
-.hero-v2__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
-  opacity: 0.75;
-}
-
-.hero-v2__video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
-  opacity: 0.75;
+/* Grid overlay sutil (efecto técnico / digital) */
+.hero-v2__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(var(--hero-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-grid-line) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 70% 60% at 30% 45%, black 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 45%, black 0%, transparent 72%);
+  pointer-events: none;
 }
 
 /* Dark gradient: full left half solid, fades to transparent right */
@@ -673,22 +770,25 @@ footer {
   pointer-events: none;
 }
 
-/* Text container — anchored bottom-left */
+/* Text container — vertically centered, aligned left */
 .hero-v2__inner {
   position: relative;
-  z-index: 2;
-  padding: 160px 48px 72px;
-  max-width: 620px;
+  z-index: 5;
+  padding: 0 48px; /* Removed top/bottom padding for true flex center */
+  max-width: 620px; /* Constrain width to keep it on the left */
+  margin: 0;
+  text-align: left;
+  width: 100%;
 }
 
 .hero-v2__text h1 {
   font-family: var(--font);
-  font-size: clamp(28px, 3.8vw, 58px);
+  font-size: clamp(24px, 3.2vw, 48px); /* Smaller font size */
   font-weight: 300;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: var(--bg1);
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .hero-v2__text h1 strong {
@@ -705,11 +805,18 @@ footer {
   color: var(--white-45);
   transition: color 0.3s ease;
   line-height: 0;
-  z-index: 2;
+  z-index: 5;
 }
 
 .hero-v2__scroll:hover {
   color: var(--bg1);
+}
+
+/* Pausa todas las animaciones del blueprint hasta que la página esté lista
+   El script en el body agrega la clase .play al <body> via rAF            */
+body:not(.play) .hero-v2__bg,
+body:not(.play) .hero-v2__bg * {
+  animation-play-state: paused !important;
 }
 
 @media (max-width: 860px) {
@@ -718,11 +825,46 @@ footer {
     max-width: 100%;
   }
 
+  .hero-v2__scrim {
+    background:
+      linear-gradient(180deg,
+        rgba(42, 33, 39, 0.55) 0%,
+        rgba(42, 33, 39, 0.55) 40%,
+        rgba(42, 33, 39, 0.92) 78%,
+        rgba(42, 33, 39, 0.97) 100%);
+  }
+
   .hero-v2__overlay {
     background: linear-gradient(to top,
         var(--ink) 0%,
         rgba(42, 33, 39, 0.7) 50%,
         transparent 100%);
+  }
+
+  .hero-v2__grid {
+    display: none;
+  }
+}
+
+/* Reduced motion: mostrar el plano estático, sin animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .hero-v2__bg {
+    animation: none !important;
+  }
+
+  .hero-v2__bg .wipe-rect {
+    width: 1800px !important;
+    animation: none !important;
+  }
+
+  .hero-v2__bg .wipe-line {
+    opacity: 0 !important;
+    animation: none !important;
+  }
+
+  .hero-v2__bg [class*="draw-layer"] path {
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
   }
 }
 
@@ -885,6 +1027,107 @@ footer {
 
   .intro-split__slide {
     font-size: 20px;
+  }
+}
+
+
+/* ============================================================
+   HOME V2 — Stats Strip
+   ============================================================ */
+
+.home-stats-strip {
+  background-color: var(--bg2);
+  padding: 80px 0;
+  border-bottom: 1px solid var(--ink-10);
+}
+
+.home-stats-strip__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.home-stat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--ink);
+}
+
+.home-stat__number {
+  font-size: clamp(64px, 6vw, 100px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+.home-stat__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-stat__text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Stat 1: Area (m2) */
+.home-stat--area .home-stat__top {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 4px;
+}
+
+.home-stat--area .home-stat__m2-wrap {
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  padding-left: 12px;
+  padding-bottom: 4px;
+}
+
+.home-stat--area .home-stat__axis-icon {
+  position: absolute;
+  bottom: -4px;
+  left: -8px;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+/* Stat 2: Proyectos */
+.home-stat--projects {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.home-stat--projects .home-stat__number {
+  line-height: 0.8;
+}
+
+.home-stat--projects .home-stat__text {
+  margin-bottom: 6px;
+}
+
+/* Stat 3: Años */
+.home-stat--years {
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .home-stats-strip__grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
   }
 }
 
@@ -1741,7 +1984,8 @@ footer {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 200px 0 64px;
+  padding-top: 200px;
+  padding-bottom: 64px;
 }
 
 .page-hero .breadcrumb {
@@ -1795,7 +2039,8 @@ footer {
   }
 
   .page-hero .wrap {
-    padding: 130px 0 48px;
+    padding-top: 130px;
+    padding-bottom: 48px;
   }
 
   .page-hero .stat-row {
@@ -2211,6 +2456,189 @@ footer {
   .team-card {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+}
+
+/* ---- Team Card v2 (Prototipo 3 columnas) ---- */
+.team-card-v2 {
+  display: grid;
+  grid-template-columns: 1fr 340px 1.2fr;
+  gap: 48px;
+  align-items: stretch;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--ink-10);
+}
+
+.team-card-v2:first-child {
+  padding-top: 0;
+}
+
+/* Columna 1: Identidad */
+.team-card-v2__identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-v2__identity h3 {
+  font-size: clamp(26px, 2.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.team-card-v2__identity h3 .prefix {
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 400;
+  color: var(--ink-60);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.team-card-v2__identity .rol {
+  font-size: 14px;
+  color: var(--ink-80);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.team-card-v2__links {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  margin-bottom: auto; /* Empuja especialización al fondo */
+}
+
+.team-card-v2__links a {
+  color: var(--ink-40);
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.team-card-v2__links a:hover {
+  color: var(--accent);
+}
+
+.team-card-v2__spec {
+  margin-top: 40px;
+}
+
+.team-card-v2__spec .spec-title {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-40);
+  margin-bottom: 8px;
+}
+
+.team-card-v2__spec p {
+  font-size: 13px;
+  color: var(--ink-60);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Columna 2: Imagen */
+.team-card-v2__image {
+  background-color: var(--bg2);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card-v2__image img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+  mix-blend-mode: multiply; /* Integrar fondo de la foto si es blanco con el gris */
+}
+
+/* Columna 3: Biografía */
+.team-card-v2__bio {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-v2__bio p {
+  font-size: 14px;
+  color: var(--ink-80);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 90%;
+}
+
+.team-card-v2__bio p:last-of-type {
+  margin-bottom: 0;
+}
+
+.team-card-v2__nav {
+  margin-top: auto; /* Lo empuja abajo */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.team-card-v2__nav .nav-count {
+  font-size: 12px;
+  color: var(--ink-40);
+  font-weight: 500;
+}
+
+.team-card-v2__nav .nav-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--ink-20);
+  background: transparent;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team-card-v2__nav .nav-button:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .team-card-v2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .team-card-v2__image {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-card-v2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .team-card-v2__image {
+    grid-column: 1;
+  }
+
+  .team-card-v2__bio p {
+    max-width: 100%;
+  }
+  
+  .team-card-v2__nav {
+    margin-top: 32px;
   }
 }
 
