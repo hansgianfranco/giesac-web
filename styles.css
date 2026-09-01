@@ -645,11 +645,11 @@ footer {
 
 /* Variables de color del SVG — valores exactos de hero-alumbrado.html */
 .hero-v2 {
-  --wall-lite:  rgba(143, 227, 255, 0.34);  /* cyan tenue original  */
-  --wall-dark:  rgba(191, 231, 255, 0.62);  /* cyan brillante orig. */
-  --draw-lite:  #9fe8ff;                    /* draw layer lite orig. */
-  --draw-dark:  #e7fbff;                    /* draw layer dark orig. */
-  --hero-grid-line: rgba(143, 227, 255, 0.14); /* navy-line original */
+  --wall-lite:  rgba(255, 255, 255, 0.34);
+  --wall-dark:  rgba(255, 255, 255, 0.62);
+  --draw-lite:  #C4C1BE;
+  --draw-dark:  #F4F2F0;
+  --hero-grid-line: rgba(255, 255, 255, 0.14);
 
   position: relative;
   min-height: 100vh;
@@ -697,23 +697,6 @@ footer {
   to   { width: 1800px; }
 }
 
-/* Línea de barrido que sigue el borde del reveal */
-.hero-v2__bg .wipe-line {
-  opacity: 0.95;
-  animation:
-    lineMove 5.3s cubic-bezier(.32, .72, .28, 1) 0.23s both,
-    lineFade 1.2s ease-in 4.8s forwards;
-}
-
-@keyframes lineMove {
-  from { x: -900px; }
-  to   { x:  900px; }
-}
-
-@keyframes lineFade {
-  to { opacity: 0; }
-}
-
 /* Líneas del draw-layer que se dibujan con stroke-dashoffset */
 @keyframes drawline {
   to { stroke-dashoffset: 0; }
@@ -730,10 +713,10 @@ footer {
   z-index: 1;
   background:
     linear-gradient(100deg,
-      rgba(42, 33, 39, 0.95) 0%,
-      rgba(42, 33, 39, 0.82) 28%,
-      rgba(42, 33, 39, 0.32) 54%,
-      rgba(42, 33, 39, 0.52) 100%),
+      rgba(42, 33, 39, 0.82) 0%,
+      rgba(42, 33, 39, 0.58) 28%,
+      rgba(42, 33, 39, 0.24) 54%,
+      rgba(42, 33, 39, 0.46) 100%),
     linear-gradient(180deg,
       rgba(42, 33, 39, 0.32) 0%,
       rgba(42, 33, 39, 0.05) 30%,
@@ -763,9 +746,9 @@ footer {
   inset: 0;
   z-index: 1;
   background: linear-gradient(to right,
-      var(--ink) 0%,
-      var(--ink) 28%,
-      rgba(42, 33, 39, 0.6) 55%,
+      rgba(42, 33, 39, 0.68) 0%,
+      rgba(42, 33, 39, 0.42) 32%,
+      rgba(42, 33, 39, 0.18) 58%,
       transparent 100%);
   pointer-events: none;
 }
@@ -854,11 +837,6 @@ body:not(.play) .hero-v2__bg * {
 
   .hero-v2__bg .wipe-rect {
     width: 1800px !important;
-    animation: none !important;
-  }
-
-  .hero-v2__bg .wipe-line {
-    opacity: 0 !important;
     animation: none !important;
   }
 
