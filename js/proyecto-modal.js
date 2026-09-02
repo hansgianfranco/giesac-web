@@ -77,7 +77,7 @@
 
     if (!modal) buildModal();
 
-    fotos = project.fotos && project.fotos.length ? project.fotos : [project.img || 'images/recurso-1.png'];
+    fotos = project.fotos && project.fotos.length ? project.fotos : [project.img || 'images/recurso-1.webp'];
 
     modal.querySelector('.proy-modal__img').alt = project.nombre;
     modal.querySelector('.proy-modal__tag').textContent = project.tipo;

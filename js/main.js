@@ -223,6 +223,38 @@ function initIntroSlider() {
 initIntroSlider();
 
 /* ============================================================
+   Hero scroll-down chevron → scroll suave a la siguiente sección
+   ============================================================ */
+const heroScroll = document.getElementById('hero-scroll');
+if (heroScroll) {
+  const hero = heroScroll.closest('.hero-v2');
+  const target = hero ? hero.nextElementSibling : null;
+
+  const scrollDown = () => {
+    if (!target) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  };
+
+  heroScroll.addEventListener('click', scrollDown);
+  heroScroll.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollDown();
+    }
+  });
+}
+
+/* ============================================================
+   Clients marquee — duplica los logos para el loop infinito
+   ============================================================ */
+const clientsTrack = document.getElementById('clients-track');
+if (clientsTrack) {
+  const items = Array.from(clientsTrack.children);
+  items.forEach((item) => clientsTrack.appendChild(item.cloneNode(true)));
+}
+
+/* ============================================================
    Proyectos clickeables (home) → abren modal de detalle
    ============================================================ */
 document.querySelectorAll('[data-proyecto]').forEach((el) => {

@@ -136,7 +136,8 @@
         </div>
       </div>
       <!-- Scroll down chevron centrado -->
-      <div class="hero-v2__scroll fade fade-delay-2" aria-label="Desplazarse hacia abajo">
+      <div class="hero-v2__scroll fade fade-delay-2" id="hero-scroll" role="button" tabindex="0"
+        aria-label="Desplazarse hacia abajo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="40" height="40" aria-hidden="true"
           focusable="false">
           <circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-miterlimit="10" />
@@ -148,7 +149,7 @@
     <!-- ==================== NOSOTROS (SLIDER) ==================== -->
     <section class="intro-split" aria-label="Cómo trabajamos en GIESAC">
       <div class="intro-split__bg" aria-hidden="true">
-        <img src="images/recurso-bim-monitor.png" alt="" width="1310" height="471" loading="lazy" decoding="async">
+        <img src="images/recurso-bim-monitor.webp" alt="" width="1310" height="471" loading="lazy" decoding="async">
       </div>
       <div class="intro-split__inner fade">
         <div class="intro-split__top">
@@ -303,11 +304,11 @@
             <div class="projects-carousel__slide">
               <div class="projects-carousel__frame projects-carousel__frame--split">
                 <div class="projects-carousel__split-img" data-proyecto="parque-incario">
-                  <img src="images/recurso-1.png" alt="Parque Incario - Armando Paredes" width="900" height="700"
+                  <img src="images/recurso-1.webp" alt="Parque Incario - Armando Paredes" width="900" height="700"
                     loading="lazy" decoding="async">
                 </div>
                 <div class="projects-carousel__split-img" data-proyecto="bustamante-2">
-                  <img src="images/recurso-2.png" alt="Bustamante 2 - Morada" width="900" height="700" loading="lazy"
+                  <img src="images/recurso-2.webp" alt="Bustamante 2 - Morada" width="900" height="700" loading="lazy"
                     decoding="async">
                 </div>
               </div>
@@ -320,11 +321,11 @@
             <div class="projects-carousel__slide">
               <div class="projects-carousel__frame projects-carousel__frame--split">
                 <div class="projects-carousel__split-img" data-proyecto="multifamiliar-san-miguel">
-                  <img src="images/recurso-3.png" alt="Multifamiliar — San Miguel" width="1200" height="750"
+                  <img src="images/recurso-3.webp" alt="Multifamiliar — San Miguel" width="1200" height="750"
                     loading="lazy" fetchpriority="low" decoding="async">
                 </div>
                 <div class="projects-carousel__split-img" data-proyecto="torre-tale">
-                  <img src="images/recurso-4.png" alt="Multifamiliar Torre Tale" width="1200" height="750"
+                  <img src="images/recurso-4.webp" alt="Multifamiliar Torre Tale" width="1200" height="750"
                     loading="lazy" decoding="async">
                 </div>
               </div>
@@ -383,11 +384,11 @@
               </div>
               <div class="projects-carousel__frame projects-carousel__frame--stack">
                 <div class="projects-carousel__split-img" data-proyecto="jorge-chavez">
-                  <img src="images/nuevo-jorge-chavez.jpg" alt="Aeropuerto Internacional Jorge Chávez — Callao"
+                  <img src="images/nuevo-jorge-chavez.webp" alt="Aeropuerto Internacional Jorge Chávez — Callao"
                     width="1200" height="750" loading="lazy" decoding="async">
                 </div>
                 <div class="projects-carousel__split-img" data-proyecto="instalaciones-corporativas">
-                  <img src="images/recurso-1.png" alt="Instalaciones Corporativas — Gestión BIM" width="707"
+                  <img src="images/recurso-1.webp" alt="Instalaciones Corporativas — Gestión BIM" width="707"
                     height="1000" loading="lazy" decoding="async">
                 </div>
               </div>
@@ -401,11 +402,11 @@
               </div>
               <div class="projects-carousel__frame projects-carousel__frame--stack">
                 <div class="projects-carousel__split-img" data-proyecto="centro-convenciones-pucp">
-                  <img src="images/recurso-3.png" alt="Centro de Convenciones PUCP" width="1200" height="750"
+                  <img src="images/recurso-3.webp" alt="Centro de Convenciones PUCP" width="1200" height="750"
                     loading="lazy" decoding="async">
                 </div>
                 <div class="projects-carousel__split-img" data-proyecto="estadio-nacional">
-                  <img src="images/recurso-2.png" alt="Remodelación Estadio Nacional" width="900" height="700"
+                  <img src="images/recurso-2.webp" alt="Remodelación Estadio Nacional" width="900" height="700"
                     loading="lazy" decoding="async">
                 </div>
               </div>
@@ -436,21 +437,134 @@
       <div class="wrap">
         <h2 class="clients-new__title fade"><strong>Clientes</strong> que nos respaldan</h2>
         <div class="clients-new__grid fade fade-delay-1">
-          <div class="clients-new__logo">
-            <img src="images/clientes/madrid.svg" alt="Madrid Inmobiliaria" width="160" height="56" loading="lazy"
-              decoding="async">
-          </div>
-          <div class="clients-new__logo">
-            <img src="images/clientes/tale.svg" alt="Tale Inmobiliaria" width="160" height="56" loading="lazy"
-              decoding="async">
-          </div>
-          <div class="clients-new__logo">
-            <img src="images/clientes/andiamo.svg" alt="Andiamo" width="160" height="56" loading="lazy"
-              decoding="async">
-          </div>
-          <div class="clients-new__logo">
-            <img src="images/clientes/cantabria.svg" alt="Cantabria Inmobiliaria" width="160" height="56" loading="lazy"
-              decoding="async">
+          <div class="clients-new__track" id="clients-track">
+            <div class="clients-new__logo">
+              <img src="images/clientes/madrid.svg" alt="Madrid Inmobiliaria" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/tale.svg" alt="Tale Inmobiliaria" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/andiamo.svg" alt="Andiamo" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/cantabria.svg" alt="Cantabria Inmobiliaria" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/amma-inmobiliaria.png" alt="Amma Inmobiliaria" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/armando-paredes.png" alt="Armando Paredes" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/aster-homes.png" alt="Aster Homes" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/cheng-mas-franco-arquitectos.png" alt="Cheng Mas Franco Arquitectos" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/clinica-internacional.png" alt="Clínica Internacional" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/colindante.png" alt="Colindante" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/consorcio-inti-punku.png" alt="Consorcio Inti Punku" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/creativa.png" alt="Creativa" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/ditrenzzo.png" alt="Ditrenzzo" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/divemotor.png" alt="Divemotor" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/enel.png" alt="Enel" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/franca-inmobiliaria.png" alt="Franca Inmobiliaria" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/grupo-centenario.png" alt="Grupo Centenario" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/grupo-cygnus.png" alt="Grupo Cygnus" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/grupo-lar.png" alt="Grupo LAR" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/ingennus.png" alt="Ingennus" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/inretail.png" alt="InRetail" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/intelec.png" alt="Intelec" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/lider-grupo-constructor.png" alt="Líder Grupo Constructor" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/lima1007-arquitectos.png" alt="Lima 1007 Arquitectos" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/llosa-edificaciones.png" alt="Llosa Edificaciones" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/los-portales.png" alt="Los Portales" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/multiurbe.png" alt="Multiurbe" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/municipalidad-alto-amazonas.png" alt="Municipalidad de Alto Amazonas"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/municipalidad-santiago-de-surco.png" alt="Municipalidad de Santiago de Surco"
+                loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/orizzonte.png" alt="Orizzonte" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/pms-drs.png" alt="PMS DRS" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/pucp.png" alt="PUCP" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/redbay-inmobiliaria.png" alt="Redbay Inmobiliaria" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/reyna-grupo-inmobiliario.png" alt="Reyna Grupo Inmobiliario" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/san-charbel-edificaciones.png" alt="San Charbel Edificaciones" loading="lazy"
+                decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/tg.png" alt="TG" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/thiessen.png" alt="Thiessen" loading="lazy" decoding="async">
+            </div>
+            <div class="clients-new__logo">
+              <img src="images/clientes/vienna-grupo-inmobiliario.png" alt="Vienna Grupo Inmobiliario" loading="lazy"
+                decoding="async">
+            </div>
           </div>
         </div>
       </div>
@@ -489,7 +603,7 @@
         </div>
         <div class="cta-section__right fade fade-delay-2">
           <div class="cta-section__frame">
-            <img src="images/recurso-5.jpg" alt="Oficina GIESAC Barranco" class="cta-section__img" width="700"
+            <img src="images/recurso-5.webp" alt="Oficina GIESAC Barranco" class="cta-section__img" width="700"
               height="900" loading="lazy" decoding="async">
           </div>
         </div>
